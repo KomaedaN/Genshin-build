@@ -6,7 +6,7 @@ import { CharactersComponent } from './characters/characters.component';
 
 const routes: Routes = [
   { path: '', component: HomeComponent},
-  { path: 'characters', component: CharactersComponent},
+  { path: 'characters/', component: CharactersComponent},
 ];
 
 @NgModule({

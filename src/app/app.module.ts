@@ -6,6 +6,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
+import { CharactersTemplateComponent } from './templates/characters-template/characters-template.component';
 
 const routes: Routes = [
 
@@ -15,7 +16,8 @@ const routes: Routes = [
   declarations: [
     AppComponent,
     HomeComponent,
-    CharactersComponent
+    CharactersComponent,
+    CharactersTemplateComponent
   ],
   imports: [
     BrowserModule,
