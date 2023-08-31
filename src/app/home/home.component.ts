@@ -10,21 +10,13 @@ export class HomeComponent {
   constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) {}
 
   ngOnInit(): void {
-    this.url();
     this.addCharactersTemplate();
   }
-  allCharacters = ['ayato', 'ayaka', 'raiden'];
+  allCharacters = ['ayato', 'ayaka', 'raiden', 'hu-tao', 'kazuha', 'gorou', 'nahida'];
   test = 'rff';
   hydro = 'hydro';
   template = '';
 
-  url() {
-    const Url = "https://genshin.jmp.blue/characters/ayato/";
-    fetch(Url)
-    .then(res => res.json())
-    .then(data => {
-    })
-  };
 
   addCharactersTemplate() {
     this.allCharacters.forEach(element => {
@@ -32,20 +24,31 @@ export class HomeComponent {
       fetch(Url)
       .then(res => res.json())
       .then(data => {
-      const template = `
-                        <img src="https://genshin.jmp.blue/characters/${element}/icon">
-                        <div id="test">
-                        <h1>${element}</h1>
-                        <h2>Vision: ${data['vision']}</h2>
-                        </div>`
-      const section = this.el.nativeElement.querySelector('#characters-section');
-      const div = this.renderer.createElement('div');
-      div.innerHTML = template;
-      this.renderer.addClass(div, 'card');
-      this.renderer.appendChild(section, div);
+        const vision = data['vision'];
+        const template = `
+                          <img src="https://genshin.jmp.blue/characters/${element}/icon-big" class="card__img">
+                          <div id="test">
+                          <h1>${element}</h1>
+                          <h2>Vision: ${data['vision']}</h2>
+                          <h2>Nation: ${data['nation']}</h2>
+                          </div>`
+        const section = this.el.nativeElement.querySelector('#characters-section');
+        const div = this.renderer.createElement('div');
+        div.innerHTML = template;
+        
+        this.renderer.addClass(div, 'card');
+        this.renderer.addClass(div, vision);
+        this.renderer.setAttribute(div, 'id', 'card_id')
+        this.renderer.appendChild(section, div);
       });
     });
-  }
+    const card_img = document.createElement('style');
+      card_img.textContent = `
+      .card__img{
+        height: 256px;
+      }`;
+      document.head.appendChild(card_img);
+  };
 
   passData() {
     this.router.navigateByUrl('tt '+ this.test +'');
