@@ -8,6 +8,7 @@ import { HomeComponent } from './home/home.component';
 import { CharactersComponent } from './characters/characters.component';
 import { CharactersTemplateComponent } from './templates/characters-template/characters-template.component';
 import { NavComponent } from './nav/nav.component';
+import { CommonModule } from '@angular/common';
 
 const routes: Routes = [
 
@@ -19,9 +20,10 @@ const routes: Routes = [
     HomeComponent,
     CharactersComponent,
     CharactersTemplateComponent,
-    NavComponent
+    NavComponent,
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     RouterModule.forRoot(routes, { useHash: true })

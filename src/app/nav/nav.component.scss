@@ -1,0 +1,28 @@
+.nav{
+    display: flex;
+    position: fixed;
+    background-color: black;
+    width: 100%;
+    opacity: 0.8;
+    height: 4rem;
+    top: 0;
+    left: 0;
+    z-index: 4;
+    &__logo{
+        margin: 0.2rem 10rem 0.2rem 5rem;
+    }
+    &__list{
+        display: flex;
+        height: 100%;
+        align-items: center;
+    }
+
+    &__link{
+        text-decoration: none;
+        color: white;
+        cursor: pointer;
+        margin-left: 3rem;
+        margin-right: 3rem;
+        font-size: 1.5rem;
+    }
+}

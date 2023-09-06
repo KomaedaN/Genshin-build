@@ -1,0 +1,71 @@
+@font-face {
+    font-family: Genshin;
+    src: url('../../assets/zh-cn.ttf');
+}
+*{
+    font-family: Genshin;
+    
+}
+.card{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    height: 256px;
+    border: 0.15rem solid black;
+    color: white;
+    text-shadow: 1px 2px 2px black;
+    border-radius: 0.3rem;
+    &__img{
+        height: 256px;
+    }
+}
+
+.card_section{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    row-gap: 4rem;
+    column-gap: 4rem;
+}
+
+.element{
+    &__btn{
+        display: flex;
+        justify-content: center;
+        margin: 1rem;  
+    }
+
+    &__img{
+        border: 0.1rem solid black;
+        margin: 0.6rem;
+        padding: 0.3rem;
+        border-radius: 0.3rem;
+    }
+    
+}
+
+.Hydro {
+    background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
+}
+
+.Cryo {
+    background: linear-gradient(109.6deg, rgb(120, 212, 234) 11.2%, rgb(216, 226, 253) 72.1%);
+}
+
+.Electro {
+    background: radial-gradient(circle at 10% 20%, rgb(236, 158, 248) 0%, rgb(131, 83, 241) 90.1%);
+}
+
+.Dendro {
+    background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+}
+
+.Geo {
+    background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+}
+
+.Anemo {
+    background: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+}
+
+.Pyro {
+    background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+}
