@@ -1,17 +1,27 @@
+<video autoplay loop muted class="video">
+    <source src="../../assets/videos/wallpaperventi.mp4" type="video/mp4">
+</video>
 <app-nav></app-nav>
 
 <section class="characters">
     <div class="element__wrap">
         <div class="leftArrow" (click)="previousSlide()"></div>
-        <img id="element__1" class="element__container" [src]="getCurrentSlideUrl(0)" (click)="currentElementFocus(-1, 'element__1')">
-        <img id="element__2" class="element__container" [src]="getCurrentSlideUrl(1)" (click)="currentElementFocus(0, 'element__2')">
-        <img id="element__3" class="element__container" [src]="getCurrentSlideUrl(2)" (click)="currentElementFocus(1, 'element__3')">
+        <img [ngClass]="class1" id="element__1" class="element__container" [src]="getCurrentSlideUrl(0)" (click)="currentElementFocus(0, 1)">
+        <img [ngClass]="class2" id="element__2" class="element__container" [src]="getCurrentSlideUrl(1)" (click)="currentElementFocus(1, 2)">
+        <img [ngClass]="class3" id="element__3" class="element__container" [src]="getCurrentSlideUrl(2)" (click)="currentElementFocus(2, 3)">
         <div class="rightArrow" (click)="nextSlide()"></div>
     </div>
 
-    <div  class="card">
+    <div class="card">
+        
         <div class="art__container">
-            <div class="art__image"></div>
+            <div>
+                <img [src]="getCurrentVision()" alt="Vision">
+            </div>
+            <div></div>
+            <div></div>
         </div>
+
+        <img class="art__image" src="../../assets/images/xiao.png">
     </div>
 </section>

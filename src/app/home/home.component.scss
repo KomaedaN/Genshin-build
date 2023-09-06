@@ -8,29 +8,31 @@
 
 
 .card {
-    background-color: blueviolet;
-    height: 30rem;
-    width: 60rem;
+    width: initial;
+    height: initial;
+    margin-left: 5rem;
+    margin-top: 7rem;
 }
 
 
 .characters{
     display: flex;
     justify-content: center;
-    background-color: gray;
-    height: 60rem;
 }
 
 .art{
     &__container{
-        width: 45rem;
+        width: 60rem;
         height: 40rem;
+        background-color: #584e32;
+        
         
     }
     &__image{
-        background-image: url(../../assets/images/xiao.png);
-        height: 100%;
-        width: 100%;
+        position: absolute;
+        top: 0;
+        right: 0;
+        background: center/cover no-repeat;
     }
 }
 
@@ -60,6 +62,7 @@
         background-repeat: no-repeat;
         background-position: center;
         padding: 0.4rem;
+        cursor: pointer;
     }
     &__swiper-container{
         height: 33%;
@@ -74,6 +77,7 @@
     width: 2.7rem;
     rotate: 90deg;
     margin-left: 1rem;
+    cursor: pointer;
 }
 
 .rightArrow{
@@ -82,32 +86,45 @@
     width: 2.7rem;
     rotate: 270deg;
     margin-left: 1rem;
+    cursor: pointer;
 }
 
-.Hydro {
-    background: radial-gradient(circle at 10% 20%, rgb(59, 149, 237) 0%, rgb(7, 91, 173) 90%);
+.hydro {
+    background-color: #00BFFF;
+    opacity: 0.7;
 }
 
-.Cryo {
-    background: linear-gradient(109.6deg, rgb(120, 212, 234) 11.2%, rgb(216, 226, 253) 72.1%);
+.cryo {
+    background-color: #4682B4;
+    opacity: 0.7;
 }
 
-.Electro {
-    background: radial-gradient(circle at 10% 20%, rgb(236, 158, 248) 0%, rgb(131, 83, 241) 90.1%);
+.electro {
+    background-color: #945dc4;
+    opacity: 0.7;
 }
 
-.Dendro {
-    background: linear-gradient(to top, #0ba360 0%, #3cba92 100%);
+.dendro {
+    background-color: #a6c938;
+    opacity: 0.7;
 }
 
-.Geo {
-    background: linear-gradient(to top, #e6b980 0%, #eacda3 100%);
+.geo {
+    background-color: #debd6c;
+    opacity: 0.7;
 }
 
-.Anemo {
-    background: linear-gradient(-225deg, #B7F8DB 0%, #50A7C2 100%);
+.anemo {
+    background-color: #359697;
+    opacity: 0.7;
 }
 
-.Pyro {
-    background: radial-gradient(circle at 10% 20%, rgb(221, 49, 49) 0%, rgb(119, 0, 0) 90%);
+.pyro {
+    background-color: #EC4923;
+    opacity: 0.7;
+}
+
+.video{
+    position: fixed;
+    z-index: -9999;
 }
