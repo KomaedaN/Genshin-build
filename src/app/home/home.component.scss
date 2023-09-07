@@ -8,10 +8,11 @@
 
 
 .card {
-    width: initial;
-    height: initial;
+    width: 60%;
+    height: 40rem;
     margin-left: 5rem;
     margin-top: 7rem;
+    background-color: rgb(95, 89, 89);
 }
 
 
@@ -22,17 +23,61 @@
 
 .art{
     &__container{
-        width: 60rem;
-        height: 40rem;
-        background-color: #584e32;
-        
-        
+        height: 100%;
     }
     &__image{
         position: absolute;
-        top: 0;
-        right: 0;
+        bottom: 20%;
+        left: 50%;
         background: center/cover no-repeat;
+        z-index: 1;
+
+    }
+
+    &__header{
+        padding: 4rem 0rem 0rem 3rem;
+        display: grid;
+        align-items: center;
+        grid-template-columns: 1fr 4fr;
+        width: 50%;
+    }
+
+    &__name{
+        margin: 0 0 0 3rem;
+        font-size: 3rem;
+        
+    }
+   
+    &__img{
+        height: 100%;
+    }
+
+    &__description-container{
+        margin: 4rem 0rem 1rem 1.5rem;
+        background: rgb(255 255 255 / 50%);;
+        width: 50%;
+        font-size: 1.2rem;
+        position: relative;
+        z-index: 2;
+        
+    }
+    &__description{
+        padding: 2rem 1.2rem;
+        scroll-behavior: smooth;
+        height: 7rem;
+        overflow-y: scroll;
+    }
+    &__characters{
+        width: 50%;
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+        position: relative;
+        z-index: 9999;
+    }
+    &__characters-img{
+        height: 6rem;
+        background-color: #945dc4;
+        border: solid 1px;
     }
 }
 
@@ -71,23 +116,26 @@
     }
 }
 
-.leftArrow{
+.arrow{
     background-image: url(../../assets/images/arrow.png);
     height: 4rem;
     width: 2.7rem;
-    rotate: 90deg;
     margin-left: 1rem;
     cursor: pointer;
 }
 
-.rightArrow{
-    background-image: url(../../assets/images/arrow.png);
-    height: 4rem;
-    width: 2.7rem;
-    rotate: 270deg;
-    margin-left: 1rem;
-    cursor: pointer;
+.rotateLeft{
+    rotate: 90deg;
 }
+
+.rotateBot{
+    rotate: 270deg;
+}
+
+.rotateRight{
+    rotate: 180deg;
+}
+
 
 .hydro {
     background-color: #00BFFF;
@@ -128,3 +176,19 @@
     position: fixed;
     z-index: -9999;
 }
+
+* {
+    scrollbar-width: none;
+    scrollbar-color: #231f1f ;
+  }
+
+*::-webkit-scrollbar {
+    width: 4px;
+  }
+
+
+*::-webkit-scrollbar-thumb {
+    background-color: #231f1f;
+    border-radius: 10px;
+    
+  }

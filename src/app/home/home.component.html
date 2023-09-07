@@ -5,23 +5,35 @@
 
 <section class="characters">
     <div class="element__wrap">
-        <div class="leftArrow" (click)="previousSlide()"></div>
+        <div class="arrow rotateLeft" (click)="previousSlide()"></div>
         <img [ngClass]="class1" id="element__1" class="element__container" [src]="getCurrentSlideUrl(0)" (click)="currentElementFocus(0, 1)">
         <img [ngClass]="class2" id="element__2" class="element__container" [src]="getCurrentSlideUrl(1)" (click)="currentElementFocus(1, 2)">
         <img [ngClass]="class3" id="element__3" class="element__container" [src]="getCurrentSlideUrl(2)" (click)="currentElementFocus(2, 3)">
-        <div class="rightArrow" (click)="nextSlide()"></div>
+        <div class="arrow rotateBot" (click)="nextSlide()"></div>
     </div>
 
     <div class="card">
         
         <div class="art__container">
-            <div>
-                <img [src]="getCurrentVision()" alt="Vision">
+            <div class="art__header">
+                <img [src]="getCurrentVision()" alt="Vision" class="art__img">
+                <h1 class="art__name">{{currentCharacter}}</h1>
             </div>
-            <div></div>
-            <div></div>
+            
+            <div class="art__description-container">
+                <h2>Story</h2>
+                <p class="art__description">{{description}}</p>
+            </div>
+            <div class="art__characters">
+                <div class="arrow" (click)="previousCharacter()"></div>
+                <img id="character_1" [src]="getCharacterUrl(0)" alt="character" class="art__characters-img" (click)="getCharacterData(0)">
+                <img id="character_2" [src]="getCharacterUrl(1)" alt="character" class="art__characters-img" (click)="getCharacterData(1)">
+                <img id="character_3" [src]="getCharacterUrl(2)" alt="character" class="art__characters-img" (click)="getCharacterData(2)">
+                <img id="character_4" [src]="getCharacterUrl(3)" alt="character" class="art__characters-img" (click)="getCharacterData(3)">
+                <div  class="arrow rotateRight" (click)="nextCharacter()"></div>
+            </div>
         </div>
 
-        <img class="art__image" src="../../assets/images/xiao.png">
+        <img class="art__image" [src]="currentCharacterImg" >
     </div>
 </section>
