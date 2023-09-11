@@ -24,7 +24,7 @@ export class HomeComponent {
   }
 
   allCharacters = [
-    { hydro: [ 'yelan', 'tartaglia', 'kokomi', 'nilou', 'xingqiu', 'mona', 'barbara'], lengthCharacters: 7},
+    { hydro: [ 'tartaglia', 'yelan', 'kokomi', 'nilou', 'xingqiu', 'mona', 'barbara'], lengthCharacters: 7},
     { pyro: ['hu-tao', 'xiangling', 'bennett', 'yoimiya', 'diluc'], lengthCharacters: 5},
     { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
     { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'sucrose', 'faruzan'], lengthCharacters: 6},
@@ -183,13 +183,23 @@ export class HomeComponent {
     }
   }
   updateCharacterData(character: string) {
+    const imgId = document.getElementById('gacha_image') as HTMLElement;
+    imgId.classList.add('gachaImgAnimationReverse');
+    imgId.classList.remove('gachaImgAnimation')
+    setTimeout(() => {
       fetch(`https://genshin.jmp.blue/characters/${character}/`)
         .then(res => res.json())
         .then(data => {
           this.description = String(data['description'])
         });
-      this.currentCharacterImg = `https://genshin.jmp.blue/characters/${character}/gacha-splash`;
+      this.currentCharacterImg = `../../assets/images/characters/${character}.png`;
       this.currentCharacter = character ?? '';
+      imgId.classList.remove('gachaImgAnimationReverse');
+      imgId.classList.add('gachaImgAnimation');
+    
+    },1500);
+    
+
   }
 }
 

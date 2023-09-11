@@ -15,25 +15,32 @@
     <div class="card">
         
         <div class="art__container">
-            <div class="art__header">
-                <img [src]="getCurrentVision()" alt="Vision" class="art__img">
-                <h1 class="art__name">{{currentCharacter}}</h1>
+            <div class="art__background-header">
+                <div class="art__header">
+                    <img [src]="getCurrentVision()" alt="Vision" class="art__img">
+                    <h1 class="art__name">{{currentCharacter}}</h1>
+                </div>
             </div>
             
-            <div class="art__description-container">
-                <h2>Story</h2>
-                <p class="art__description">{{description}}</p>
+            <div class="art__background-description">
+                <div class="art__description-container">
+                    <h2 class="art__title-description">Story</h2>
+                    <p class="art__description">{{description}}</p>
+                </div>
             </div>
-            <div class="art__characters">
-                <div class="arrow" (click)="previousCharacter()"></div>
-                <img id="character_1" [src]="getCharacterUrl(0)" alt="character" class="art__characters-img" (click)="getCharacterData(0)">
-                <img id="character_2" [src]="getCharacterUrl(1)" alt="character" class="art__characters-img" (click)="getCharacterData(1)">
-                <img id="character_3" [src]="getCharacterUrl(2)" alt="character" class="art__characters-img" (click)="getCharacterData(2)">
-                <img id="character_4" [src]="getCharacterUrl(3)" alt="character" class="art__characters-img" (click)="getCharacterData(3)">
-                <div  class="arrow rotateRight" (click)="nextCharacter()"></div>
+
+            <div class="art__background-characters">
+                <div class="art__characters">
+                    <div class="arrow scaleL" (click)="previousCharacter()"></div>
+                    <img id="character_1" [src]="getCharacterUrl(0)" alt="character" class="art__characters-img" (click)="getCharacterData(0)">
+                    <img id="character_2" [src]="getCharacterUrl(1)" alt="character" class="art__characters-img" (click)="getCharacterData(1)">
+                    <img id="character_3" [src]="getCharacterUrl(2)" alt="character" class="art__characters-img" (click)="getCharacterData(2)">
+                    <img id="character_4" [src]="getCharacterUrl(3)" alt="character" class="art__characters-img" (click)="getCharacterData(3)">
+                    <div  class="arrow rotateRight scaleL" (click)="nextCharacter()"></div>
+                </div>
             </div>
         </div>
 
-        <img class="art__image" [src]="currentCharacterImg" >
+        <img id="gacha_image" class="art__image gachaImgAnimation" [src]="currentCharacterImg" >
     </div>
 </section>
