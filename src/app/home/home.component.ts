@@ -183,9 +183,22 @@ export class HomeComponent {
     }
   }
   updateCharacterData(character: string) {
+
     const imgId = document.getElementById('gacha_image') as HTMLElement;
+    const characters = document.getElementById('characters') as HTMLElement;
+    const name = document.getElementById('characterName') as HTMLElement;
+    const visionId = document.getElementById('currentVisionImg') as HTMLElement;
+    const descriptionId = document.getElementById('descriptionContainer') as HTMLElement;
+    characters.classList.add('disableClick');
+
     imgId.classList.add('gachaImgAnimationReverse');
-    imgId.classList.remove('gachaImgAnimation')
+    imgId.classList.remove('gachaImgAnimation');
+    name.classList.add('characterAnimationReverse');
+    name.classList.remove('characterAnimation');
+    visionId.classList.add('visionAnimationReverse');
+    visionId.classList.remove('visionAnimation');
+    descriptionId.classList.add('characterAnimationReverse');
+    descriptionId.classList.remove('characterAnimation');
     setTimeout(() => {
       fetch(`https://genshin.jmp.blue/characters/${character}/`)
         .then(res => res.json())
@@ -196,8 +209,14 @@ export class HomeComponent {
       this.currentCharacter = character ?? '';
       imgId.classList.remove('gachaImgAnimationReverse');
       imgId.classList.add('gachaImgAnimation');
-    
-    },1500);
+      name.classList.remove('characterAnimationReverse');
+      name.classList.add('characterAnimation');
+      visionId.classList.remove('visionAnimationReverse');
+      visionId.classList.add('visionAnimation');
+      descriptionId.classList.remove('characterAnimationReverse');
+      descriptionId.classList.add('characterAnimation');
+      characters.classList.remove('disableClick');
+    },1000);
     
 
   }

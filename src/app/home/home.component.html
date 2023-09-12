@@ -1,6 +1,4 @@
-<video autoplay loop muted class="video">
-    <source src="../../assets/videos/wallpaperventi.mp4" type="video/mp4">
-</video>
+<div class="background-page"></div>
 <app-nav></app-nav>
 
 <section class="characters">
@@ -17,20 +15,20 @@
         <div class="art__container">
             <div class="art__background-header">
                 <div class="art__header">
-                    <img [src]="getCurrentVision()" alt="Vision" class="art__img">
-                    <h1 class="art__name">{{currentCharacter}}</h1>
+                    <img id="currentVisionImg" [src]="getCurrentVision()" alt="Vision" class="art__img">
+                    <h1 id="characterName" class="art__name nameAnimation">{{currentCharacter}}</h1>
                 </div>
             </div>
             
             <div class="art__background-description">
-                <div class="art__description-container">
+                <div id="descriptionContainer" class="art__description-container">
                     <h2 class="art__title-description">Story</h2>
                     <p class="art__description">{{description}}</p>
                 </div>
             </div>
 
             <div class="art__background-characters">
-                <div class="art__characters">
+                <div id="characters" class="art__characters ">
                     <div class="arrow scaleL" (click)="previousCharacter()"></div>
                     <img id="character_1" [src]="getCharacterUrl(0)" alt="character" class="art__characters-img" (click)="getCharacterData(0)">
                     <img id="character_2" [src]="getCharacterUrl(1)" alt="character" class="art__characters-img" (click)="getCharacterData(1)">
