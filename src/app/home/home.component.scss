@@ -243,26 +243,35 @@
 
 
 .gachaImgAnimation{
-    animation: gachaImg 1s forwards;
+    animation: gachaImg 0.7s forwards;
 }
 .gachaImgAnimationReverse{
-    animation: gachaImgReverse 1s forwards;
+    animation: gachaImgReverse 0.7s forwards;
 }
 .characterAnimation{
-    animation: character 1s forwards;
+    animation: character 0.7s forwards;
 }
 .characterAnimationReverse{
-    animation: characterReverse 1s forwards; ;
+    animation: characterReverse 0.7s forwards; ;
 }
 .visionAnimation{
-    animation:  vision 1s forwards;
+    animation:  vision 0.7s forwards;
 }
 .visionAnimationReverse{
-    animation:  visionReverse 1s forwards;
+    animation:  visionReverse 0.7s forwards;
 }
-
-
-
+.visionBtnAnimation{
+    animation: visionBtn 0.4s forwards;
+}
+.visionBtnAnimationReverse{
+    animation: visionBtnReverse 0.4s forwards;
+}
+.characterBtnAnimation{
+    animation: characterBtn 0.8s forwards;
+}
+.characterBtnAnimationReverse{
+    animation: characterBtnReverse 0.8s forwards;
+}
 @keyframes gachaImg {
     0%{
         transform: translate(-5rem);
@@ -321,5 +330,47 @@
     100%{
         transform: translate(0px, 7rem);
         opacity: 0;
+    }
+}
+
+@keyframes visionBtn {
+    0%{
+        opacity: 0;
+        transform: translate(-1rem, 0px);
+    }
+    100%{
+        
+        transform: translate(0);
+    }
+}
+
+@keyframes visionBtnReverse {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(-1rem);
+    }
+}
+
+@keyframes characterBtn {
+    0%{
+        opacity: 0;
+        transform: translate(0px, 1rem);
+    }
+    100%{
+        
+        transform: translate(0);
+    }
+}
+
+@keyframes characterBtnReverse {
+    0%{
+        transform: translate(0);
+    }
+    100%{
+        opacity: 0;
+        transform: translate(0px, 1rem);
     }
 }

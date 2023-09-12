@@ -2,7 +2,7 @@
 <app-nav></app-nav>
 
 <section class="characters">
-    <div class="element__wrap">
+    <div id="vision-btn" class="element__wrap">
         <div class="arrow rotateLeft" (click)="previousSlide()"></div>
         <img [ngClass]="class1" id="element__1" class="element__container" [src]="getCurrentSlideUrl(0)" (click)="currentElementFocus(0, 1)">
         <img [ngClass]="class2" id="element__2" class="element__container" [src]="getCurrentSlideUrl(1)" (click)="currentElementFocus(1, 2)">
@@ -11,7 +11,6 @@
     </div>
 
     <div class="card">
-        
         <div class="art__container">
             <div class="art__background-header">
                 <div class="art__header">

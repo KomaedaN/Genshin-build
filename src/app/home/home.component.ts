@@ -52,32 +52,44 @@ export class HomeComponent {
   previousSlide() {
     this.resetFocus()
     if (this.currentIndex != 0) {
-      this.currentIndex = this.currentIndex - 1;
+      this.animationVision(-1);
     }
   }
 
   nextSlide() {
     this.resetFocus()
     if ((this.currentIndex + 2) < this.slides.length -1) {
-      this.currentIndex = this.currentIndex + 1;
+      this.animationVision(+1);
     }
   }
 
+  
+
   currentElementFocus(add:number, classNumber: number){
-    this.resetFocus()
-    if (classNumber === 1) {
-      this.class1 = this.slides[this.currentIndex + add].title;
-    }
-    else if (classNumber === 2) {
-      this.class2 = this.slides[this.currentIndex + add].title;
-    }
-    else if (classNumber === 3) {
-      this.class3 = this.slides[this.currentIndex + add].title;
-    }
-    this.currentVision = this.slides[this.currentIndex + add].title;
-    this.getCurrentVision();
-    this.charactersIndex = 0;
-    this.getCharacterData(0);
+    const visionId = document.getElementById('vision-btn') as HTMLElement;
+    visionId.classList.add('disableClick');
+      this.resetFocus()
+      if (classNumber === 1) {
+        this.class1 = this.slides[this.currentIndex + add].title;
+      }
+      else if (classNumber === 2) {
+        this.class2 = this.slides[this.currentIndex + add].title;
+      }
+      else if (classNumber === 3) {
+        this.class3 = this.slides[this.currentIndex + add].title;
+      }
+      this.currentVision = this.slides[this.currentIndex + add].title;
+      this.getCurrentVision();
+      this.charactersIndex = 0;
+      this.getCharacterData(0);
+
+    
+    
+    
+    setTimeout (() => {
+      visionId.classList.remove('disableClick');
+    }, 1000);
+    
   }
 
   resetFocus() {
@@ -130,7 +142,7 @@ export class HomeComponent {
     this.allCharacters.forEach(element => {
       if(this.currentVision in element) {
         if (this.charactersIndex != 0) {
-          this.charactersIndex = this.charactersIndex - 1;
+          this.animationCharacters(-1);
         }
       }
     });
@@ -140,7 +152,7 @@ export class HomeComponent {
     this.allCharacters.forEach(element => {
       if(this.currentVision in element) {
         if ((this.charactersIndex + 4) < element.lengthCharacters) {
-          this.charactersIndex = this.charactersIndex + 1;
+          this.animationCharacters(1);
         }
       }
     });
@@ -183,7 +195,6 @@ export class HomeComponent {
     }
   }
   updateCharacterData(character: string) {
-
     const imgId = document.getElementById('gacha_image') as HTMLElement;
     const characters = document.getElementById('characters') as HTMLElement;
     const name = document.getElementById('characterName') as HTMLElement;
@@ -216,9 +227,60 @@ export class HomeComponent {
       descriptionId.classList.remove('characterAnimationReverse');
       descriptionId.classList.add('characterAnimation');
       characters.classList.remove('disableClick');
-    },1000);
-    
+    },700);
+  }
 
+  animationVision(index: number) {
+    const visionId = document.getElementById('vision-btn') as HTMLElement;
+    visionId.classList.add('disableClick');
+    const btnVision1 = document.getElementById('element__1') as HTMLElement;
+    const btnVision2 = document.getElementById('element__2') as HTMLElement;
+    const btnVision3 = document.getElementById('element__3') as HTMLElement;
+    btnVision1.classList.add('visionBtnAnimationReverse');
+    btnVision1.classList.remove('visionBtnAnimation');
+    btnVision2.classList.add('visionBtnAnimationReverse');
+    btnVision2.classList.remove('visionBtnAnimation');
+    btnVision3.classList.add('visionBtnAnimationReverse');
+    btnVision3.classList.remove('visionBtnAnimation');
+    setTimeout (() => {
+      btnVision1.classList.add('visionBtnAnimation');
+      btnVision1.classList.remove('visionBtnAnimationReverse');
+      btnVision2.classList.add('visionBtnAnimation');
+      btnVision2.classList.remove('visionBtnAnimationReverse');
+      btnVision3.classList.add('visionBtnAnimation');
+      btnVision3.classList.remove('visionBtnAnimationReverse');
+      visionId.classList.remove('disableClick');
+      this.currentIndex = this.currentIndex + index;
+    },500)
+  }
+
+  animationCharacters(index: number) {
+    const btnId = document.getElementById('characters') as HTMLElement;
+    const btnCharacter1 = document.getElementById('character_1') as HTMLElement;
+    const btnCharacter2 = document.getElementById('character_2') as HTMLElement;
+    const btnCharacter3 = document.getElementById('character_3') as HTMLElement;
+    const btnCharacter4 = document.getElementById('character_4') as HTMLElement;
+    btnId.classList.add('disableClick');
+    btnCharacter1.classList.add('characterBtnAnimationReverse');
+    btnCharacter1.classList.remove('characterBtnAnimation');
+    btnCharacter2.classList.add('characterBtnAnimationReverse');
+    btnCharacter2.classList.remove('characterBtnAnimation');
+    btnCharacter3.classList.add('characterBtnAnimationReverse');
+    btnCharacter3.classList.remove('characterBtnAnimation');
+    btnCharacter4.classList.add('characterBtnAnimationReverse');
+    btnCharacter4.classList.remove('characterBtnAnimation');
+    setTimeout(() => {
+      btnCharacter1.classList.add('characterBtnAnimation');
+      btnCharacter1.classList.remove('characterBtnAnimationReverse');
+      btnCharacter2.classList.add('characterBtnAnimation');
+      btnCharacter2.classList.remove('characterBtnAnimationReverse');
+      btnCharacter3.classList.add('characterBtnAnimation');
+      btnCharacter3.classList.remove('characterBtnAnimationReverse');
+      btnCharacter4.classList.add('characterBtnAnimation');
+      btnCharacter4.classList.remove('characterBtnAnimationReverse');
+      btnId.classList.remove('disableClick');
+      this.charactersIndex = this.charactersIndex + index;
+    },700)
   }
 }
 
