@@ -24,11 +24,11 @@ export class HomeComponent {
   }
 
   allCharacters = [
-    { hydro: [ 'tartaglia', 'yelan', 'kokomi', 'nilou', 'xingqiu', 'mona', 'barbara'], lengthCharacters: 7},
-    { pyro: ['hu-tao', 'xiangling', 'bennett', 'yoimiya', 'diluc'], lengthCharacters: 5},
+    { hydro: [ 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 6},
+    { pyro: ['hu-tao', 'lyney','xiangling', 'bennett', 'yoimiya'], lengthCharacters: 5},
     { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
     { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'sucrose', 'faruzan'], lengthCharacters: 6},
-    { cryo: ['ayaka', 'eula', 'shenhe', 'kaeya', 'layla'], lengthCharacters: 5},
+    { cryo: ['ayaka', 'eula', 'shenhe', 'ganyu', 'layla'], lengthCharacters: 5},
     { electro: ['yae-miko', 'cyno', 'raiden', 'fischl', 'kuki-shinobu'], lengthCharacters: 5},
     { dendro: ['alhaitham', 'baizhu', 'nahida', 'tighnari','kaveh'], lengthCharacters: 5},
   ];
@@ -40,10 +40,10 @@ export class HomeComponent {
   currentIndex: number = 0;
   currentVision = 'pyro';
   currentCharacter = 'hu-tao';
-  description = "The young but highly accomplished head of the Yashiro Commisson's Kamisato Clan. Cultured and polite, he is a man of many ways and means.";
+  description = "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.";
   currentNation = 'Liyue';
   charactersIndex: number = 0;
-  currentCharacterImg = 'https://genshin.jmp.blue/characters/hu-tao/gacha-splash';
+  currentCharacterImg = 'https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_Hutao.png';
 
   getCurrentSlideUrl(add: number) {
     return `${this.slides[this.currentIndex + add].src}`
@@ -109,31 +109,45 @@ export class HomeComponent {
   getCharacterUrl(add: number) {
     if( this.currentVision === "hydro") {
       const element = this.allCharacters[0]?.[this.currentVision];
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "pyro") {
       const element = this.allCharacters[1]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "geo") {
       const element = this.allCharacters[2]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "anemo") {
       const element = this.allCharacters[3]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "cryo") {
       const element = this.allCharacters[4]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "electro") {
       const element = this.allCharacters[5]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "dendro") {
       const element = this.allCharacters[6]?.[this.currentVision]
-      return `https://genshin.jmp.blue/characters/${element ? element[this.charactersIndex + add] : undefined}/icon-big`;
+      const character = element ? element[this.charactersIndex + add] : undefined;
+      const validName = this.verifyName(String(character));
+      return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     return '';
   }
@@ -195,6 +209,7 @@ export class HomeComponent {
     }
   }
   updateCharacterData(character: string) {
+    const valideName = this.verifyName(character);
     const imgId = document.getElementById('gacha_image') as HTMLElement;
     const characters = document.getElementById('characters') as HTMLElement;
     const name = document.getElementById('characterName') as HTMLElement;
@@ -216,7 +231,7 @@ export class HomeComponent {
         .then(data => {
           this.description = String(data['description'])
         });
-      this.currentCharacterImg = `../../assets/images/characters/${character}.png`;
+      this.currentCharacterImg = `https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_${valideName}.png`;
       this.currentCharacter = character ?? '';
       imgId.classList.remove('gachaImgAnimationReverse');
       imgId.classList.add('gachaImgAnimation');
@@ -281,6 +296,39 @@ export class HomeComponent {
       btnId.classList.remove('disableClick');
       this.charactersIndex = this.charactersIndex + index;
     },700)
+  }
+
+  verifyName(character: string) {
+    if (character == 'arataki-itto') {
+      return 'Itto';
+    }
+    else if (character == 'shikanoin-heizou') {
+      return 'Heizo';
+    }
+    else if (character == 'raiden') {
+      return 'Shougun';
+    }
+    else if (character == 'yae-miko') {
+      return 'Yae';
+    }
+    else if (character == 'kuki-shinobu') {
+      return 'Shinobu';
+    }
+    else if (character == 'baizhu') {
+      return 'Baizhuer';
+    }
+    else if (character == 'alhaitham') {
+      return 'Alhatham';
+    }
+    else if (character == 'lyney') {
+      return 'Liney';
+    }
+    else {
+      const upperName = character.charAt(0).toUpperCase() + character.slice(1);
+      const valideName = upperName.replace("-", "");
+      return valideName;
+    }
+
   }
 }
 

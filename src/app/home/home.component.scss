@@ -25,7 +25,9 @@
     margin-top: 7rem;
     
 }
-
+.characterFocusImg{
+    position: relative;
+}
 .characters{
     display: flex;
     justify-content: center;
@@ -37,12 +39,12 @@
     }
     &__image{
         position: absolute;
-        bottom: 13%;
-        right: 18%;
+        bottom: 10px;
+        right: -12%;
         background: center/cover no-repeat;
         z-index: 1;
-        height: 80%;
         min-height: 600px;
+        max-height: 650px;
         transition-duration: 1s;
     }
 
