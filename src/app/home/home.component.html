@@ -3,11 +3,11 @@
 
 <section class="characters">
     <div id="vision-btn" class="element__wrap">
-        <div class="arrow rotateLeft" (click)="previousSlide()"></div>
+        <img class="arrow rotateLeft" (click)="previousSlide()" src="../../assets/images/arrow.png">
         <img [ngClass]="class1" id="element__1" class="element__container" [src]="getCurrentSlideUrl(0)" (click)="currentElementFocus(0, 1)">
         <img [ngClass]="class2" id="element__2" class="element__container" [src]="getCurrentSlideUrl(1)" (click)="currentElementFocus(1, 2)">
         <img [ngClass]="class3" id="element__3" class="element__container" [src]="getCurrentSlideUrl(2)" (click)="currentElementFocus(2, 3)">
-        <div class="arrow rotateBot" (click)="nextSlide()"></div>
+        <img class="arrow rotateBot" (click)="nextSlide()" src="../../assets/images/arrow.png">
     </div>
 
     <div class="card">
@@ -28,15 +28,16 @@
 
             <div class="art__background-characters">
                 <div id="characters" class="art__characters ">
-                    <div class="arrow scaleL" (click)="previousCharacter()"></div>
+                    <img class="arrow scaleL" (click)="previousCharacter()" src="../../assets/images/arrow.png">
                     <img id="character_1" [src]="getCharacterUrl(0)" alt="character" class="art__characters-img" (click)="getCharacterData(0)">
                     <img id="character_2" [src]="getCharacterUrl(1)" alt="character" class="art__characters-img" (click)="getCharacterData(1)">
                     <img id="character_3" [src]="getCharacterUrl(2)" alt="character" class="art__characters-img" (click)="getCharacterData(2)">
                     <img id="character_4" [src]="getCharacterUrl(3)" alt="character" class="art__characters-img" (click)="getCharacterData(3)">
-                    <div  class="arrow rotateRight scaleL" (click)="nextCharacter()"></div>
+                    <img  class="arrow rotateRight scaleL" (click)="nextCharacter()" src="../../assets/images/arrow.png">
                 </div>
             </div>
         </div>
+        
         <div class="characterFocusImg">
             <img id="gacha_image" class="art__image gachaImgAnimation" [src]="currentCharacterImg" >
         </div>

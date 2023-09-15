@@ -2,6 +2,7 @@
     font-family: Genshin;
     src: url('../../assets/zh-cn.ttf');
 }
+
 *{
     font-family: Genshin;
 }
@@ -19,18 +20,21 @@
 }
 
 .card {
-    width: 60%;
+    width: 70%;
     height: 40rem;
     margin-left: 5rem;
-    margin-top: 7rem;
+    margin-top: 10rem;
+    justify-self: left;
     
 }
 .characterFocusImg{
     position: relative;
 }
 .characters{
-    display: flex;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: 2fr 6fr;
+    justify-items: center;
+    column-gap: 4rem;
 }
 
 .art{
@@ -46,6 +50,8 @@
         min-height: 600px;
         max-height: 650px;
         transition-duration: 1s;
+        object-fit: cover;
+        width: 60rem;
     }
 
     &__header{
@@ -136,8 +142,10 @@
     &__wrap{
         height: 4rem;
         width: 4rem;
-        margin-top: 7rem;
-        
+        margin-top: 13rem;
+        position: relative;
+        z-index: 9998; 
+        justify-self: end;
     }
 
     &__swiper-slide{
@@ -168,11 +176,12 @@
 }
 
 .arrow{
-    background-image: url(../../assets/images/arrow.png);
+   
     height: 4rem;
     width: 2.7rem;
     margin-left: 1.6rem;
     cursor: pointer;
+    background-repeat: no-repeat;
 }
 
 .rotateLeft{
@@ -185,6 +194,7 @@
 
 .rotateRight{
     rotate: 180deg;
+    margin-left: 0px;
 }
 
 
@@ -277,6 +287,9 @@
 @keyframes gachaImg {
     0%{
         transform: translate(-5rem);
+        opacity: 0;
+    }
+    25%{
         opacity: 0;
     }
     100%{
@@ -374,5 +387,86 @@
     100%{
         opacity: 0;
         transform: translate(0px, 1rem);
+    }
+}
+
+@media screen and (max-width: 1900px) {
+    .characters {
+      grid-template-columns: 1fr 6fr;
+    }
+    .card{
+        height: none;
+        margin-left: 0px;
+        justify-self: auto;
+    }
+    .art{
+        &__image{
+            bottom: -50px;
+            right: 0%;
+        }
+        &__background-header{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        &__background-description{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+        &__background-characters{
+            padding-top: 1rem;
+            padding-bottom: 1rem;
+        }
+    }
+  }
+
+@media screen and (max-width: 1700px){
+    .card{
+        width: 85%;
+    }
+    .art__image{
+        right: 9%;
+    }
+}
+
+@media screen and (max-width: 1200px){
+    .characters{
+        grid-template-columns: none;
+    }
+    .element{
+        &__wrap{
+            justify-self: auto;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin-top: 10rem;
+        }
+        &__container{
+            margin-left: 1rem;
+            margin-right: 1rem;
+        }
+    }
+    .rotateLeft{
+        margin-right: 1.6rem;
+        rotate: 0deg;
+    }
+    .rotateBot{
+        rotate: 180deg;
+        
+    }
+    .card{
+        width: 95%;
+        margin-top: 6rem;
+    }
+    .art__image{
+        right: -10%;
+        width: 80rem;
+    }
+}
+  
+@media screen and (max-width: 800px){
+    .art__image{
+        right: 25%;
+        width: 40rem;
     }
 }

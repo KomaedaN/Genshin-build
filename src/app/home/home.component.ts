@@ -44,6 +44,7 @@ export class HomeComponent {
   currentNation = 'Liyue';
   charactersIndex: number = 0;
   currentCharacterImg = 'https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_Hutao.png';
+  
 
   getCurrentSlideUrl(add: number) {
     return `${this.slides[this.currentIndex + add].src}`
