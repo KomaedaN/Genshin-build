@@ -465,8 +465,18 @@
 }
   
 @media screen and (max-width: 800px){
-    .art__image{
-        right: 25%;
-        width: 40rem;
+    .art{
+        &__image{
+            right: 25%;
+            width: 40rem;
+        }
+        &__characters{
+            column-gap: 0.5rem;
+            width: 100%;
+        }
+        
+    }
+    .arrow{
+        margin-left: 0px;
     }
 }
