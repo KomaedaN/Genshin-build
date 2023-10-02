@@ -20,8 +20,10 @@ export class HomeComponent {
     
   ]
   ngOnInit(): void {
- 
+    
   }
+  
+
 
   allCharacters = [
     { hydro: [ 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 6},

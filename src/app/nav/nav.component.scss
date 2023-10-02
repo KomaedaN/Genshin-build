@@ -9,7 +9,7 @@
     left: 0;
     z-index: 9999;
     &__logo{
-        margin: 0.2rem 10rem 0.2rem 5rem;
+        padding: 0.2% 10% 0.2% 5%;
     }
     &__list{
         display: flex;
@@ -21,8 +21,44 @@
         text-decoration: none;
         color: white;
         cursor: pointer;
-        margin-left: 3rem;
-        margin-right: 3rem;
+        margin-left: 12%;
+        margin-right: 12%;
         font-size: 1.5rem;
+    }
+}
+.mobile{
+    display: none;
+}
+@media screen and (max-width: 1200px){
+    .nav{
+        &__logo{
+            padding: 0.2% 6% 0.2% 5%;
+        }
+        &__link{
+            margin-left: 8%;
+            margin-right: 8%;
+        }
+    }
+}
+
+@media screen and (max-width: 800px){
+    .nav{
+        &__logo{
+            padding: 0.2% 3% 0.2% 3%;
+        }
+        &__link{
+            margin-left: 7%;
+            margin-right: 6%;
+            font-size: 1.3rem;
+        }
+    }
+}
+
+@media screen and (max-width: 450px){
+    .nav{
+        display: none;
+    }
+    .mobile{
+        display: flex;
     }
 }

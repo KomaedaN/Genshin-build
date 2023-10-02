@@ -502,8 +502,51 @@
             margin-left: 0px;
             margin-right: 0px;
         }
-        &__u{
-            
+        
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .rotateLeft{
+        transform: scale(0.4);
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+    .rotateBot{
+        transform: scale(0.4);
+        margin-left: 0px !important;
+        margin-right: 0px !important;
+    }
+    .element__container{
+        padding: 0.2rem;
+        width: 3rem;
+        height: 3rem;
+    }
+    .characterFocusImg{
+        position: absolute;
+        top: 43%;
+        right: 0;
+    }
+    .art{
+        &__image{
+            position: sticky;
+        }
+        &__header{
+            padding: 2rem 0px 2rem 1rem;
+        }
+        &__name{
+            font-size: 2rem;
+        }
+        &__description-container{
+            width: 80%;
+        }
+        &__background-characters{
+            border: none;
+            background: none;
+        }
+        &__characters{
+            grid-template-columns: 1fr;
         }
     }
+    
 }
