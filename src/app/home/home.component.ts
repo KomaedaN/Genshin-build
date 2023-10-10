@@ -17,8 +17,8 @@ export class HomeComponent {
     { src: "https://genshin.jmp.blue/elements/cryo/icon", title: 'cryo'},
     { src: "https://genshin.jmp.blue/elements/electro/icon", title: 'electro'},
     { src: "https://genshin.jmp.blue/elements/dendro/icon", title: 'dendro'},
-    
   ]
+
   ngOnInit(): void {
     
   }

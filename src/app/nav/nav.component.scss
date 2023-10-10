@@ -8,6 +8,33 @@
     top: 0;
     left: 0;
     z-index: 9999;
+    &__mobile-container{
+        display: flex;
+        flex-direction: column;
+    }
+    &__mobile-content{
+        display: flex;
+        height: 5rem;
+        flex-direction: column;
+        align-items: center;
+    }
+    &__mobile-link{
+        background-color: black;
+        width: 100%;
+        border-bottom: 1px solid #5f5b5b;
+        padding: 1.5rem 0;
+    }
+    &__display{
+        height: 170vh;
+        width: 95vw;
+        background-color: black;
+        position: fixed;
+        z-index: 99999;
+        animation: mobileNav 0.2s forwards;
+    }
+    &__flex{
+        display: flex;
+    }
     &__logo{
         padding: 0.2% 10% 0.2% 5%;
     }
@@ -25,10 +52,56 @@
         margin-right: 12%;
         font-size: 1.5rem;
     }
+    &__cross{
+        background-color: beige;
+        width: 3rem;
+        align-self: center;
+        cursor: pointer;
+        border: solid thin;
+        border-radius: 15px;
+        &:hover{
+            transform: scale(1.1);
+            background-color: #ff6f6f;
+        }
+    }
+    &__logo-cross{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 1.2rem 1rem;
+    }
+    &__link-display{
+        color: white;
+        font-size: 1.3rem;
+        text-decoration: none;
+        margin-left: 2rem;
+    }
+    &__top{
+        border-top: 1px solid #5f5b5b;
+    }
 }
 .mobile{
     display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 4rem;
+    margin: 0.5rem;
+    cursor: pointer;
+
+    &__nav{
+        border-bottom: solid;
+        border-color: white;
+        height: 2px;
+        width: 2rem;
+        padding-top: 0.2rem;
+
+    }
 }
+.logo{
+    height: 4rem;
+}
+
 @media screen and (max-width: 1200px){
     .nav{
         &__logo{
@@ -56,9 +129,24 @@
 
 @media screen and (max-width: 450px){
     .nav{
-        display: none;
+        justify-content: center;
+        &__flex{
+            
+            display: none;
+        }
     }
+
     .mobile{
         display: flex;
+    }
+}
+
+
+@keyframes mobileNav {
+    0%{
+        transform: translate(-20rem);
+    }
+    100%{
+        transform: translate(0rem, 0px);
     }
 }

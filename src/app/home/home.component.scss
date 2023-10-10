@@ -94,7 +94,7 @@
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
         position: relative;
-        z-index: 9999;
+        z-index: 9998;
         align-items: center;
         padding-top: 2rem;
         padding-bottom: 2rem;
@@ -545,7 +545,12 @@
             background: none;
         }
         &__characters{
-            grid-template-columns: 1fr;
+            column-gap: 0.1rem;
+            grid-template-columns: 0.1fr 1fr 1fr 1fr 1fr 0.1fr;
+        }
+        &__characters-img{
+            height: 3.5rem;
+            min-width: 0;
         }
     }
     

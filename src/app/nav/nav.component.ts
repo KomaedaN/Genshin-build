@@ -9,6 +9,14 @@ export class NavComponent {
   ngOnInit(): void {
 
   }
-  mobile = false;
+  displayNav = false;
+  
+  showNavDetails(){
+    this.displayNav = true;
+  }
+
+  hideNavDetails() {
+    this.displayNav = false;
+  }
 
 }
