@@ -52,6 +52,7 @@
         transition-duration: 1s;
         object-fit: cover;
         width: 60rem;
+        overflow: hidden;
     }
 
     &__header{
