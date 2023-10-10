@@ -530,7 +530,9 @@
     }
     .art{
         &__image{
-            position: sticky;
+            position: relative;
+            width: 100%;
+            left: -160px;
         }
         &__header{
             padding: 2rem 0px 2rem 1rem;
