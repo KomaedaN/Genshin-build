@@ -23,7 +23,7 @@
     width: 70%;
     height: 40rem;
     margin-left: 5rem;
-    margin-top: 10rem;
+    margin-top: 7rem;
     justify-self: left;
     
 }
@@ -143,7 +143,7 @@
     &__wrap{
         height: 4rem;
         width: 4rem;
-        margin-top: 13rem;
+        margin-top: 10rem;
         position: relative;
         z-index: 9998; 
         justify-self: end;
@@ -440,7 +440,7 @@
             flex-direction: row;
             justify-content: space-around;
             align-items: center;
-            margin-top: 10rem;
+            margin-top: 8rem;
         }
         &__container{
             margin-left: 1rem;
@@ -457,7 +457,7 @@
     }
     .card{
         width: 95%;
-        margin-top: 6rem;
+        margin-top: 4rem;
     }
     .art__image{
         right: -10%;
@@ -518,10 +518,15 @@
         margin-left: 0px !important;
         margin-right: 0px !important;
     }
-    .element__container{
+    .element{
+        &__container{
         padding: 0.2rem;
         width: 3rem;
         height: 3rem;
+        }
+        &__wrap{
+            margin-top: 5rem;
+        }
     }
     .characterFocusImg{
         position: absolute;
@@ -533,6 +538,7 @@
             position: relative;
             width: 100%;
             left: -160px;
+            top: -175px;
         }
         &__header{
             padding: 2rem 0px 2rem 1rem;
@@ -556,5 +562,7 @@
             min-width: 0;
         }
     }
-    
+    .card{
+        margin-top: 2rem;
+    }
 }
