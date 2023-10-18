@@ -26,7 +26,7 @@ export class HomeComponent {
 
 
   allCharacters = [
-    { hydro: [ 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 6},
+    { hydro: [ 'neuvillette', 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 7},
     { pyro: ['hu-tao', 'lyney','xiangling', 'bennett', 'yoimiya'], lengthCharacters: 5},
     { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
     { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'sucrose', 'faruzan'], lengthCharacters: 6},
@@ -66,7 +66,22 @@ export class HomeComponent {
     }
   }
 
-  
+  verifyArrowState() {
+    const leftArrowId = document.getElementById('leftArrowSlide') as HTMLElement;
+    const rightArrowId = document.getElementById('rightArrowSlide') as HTMLElement;
+    if (this.currentIndex == 0) {
+      leftArrowId.classList.add('disable_state');
+    }
+    else{
+      leftArrowId.classList.remove('disable_state');
+    if (this.currentIndex + 2 == 6) {
+      rightArrowId.classList.add('disable_state');
+    } 
+    else{
+      rightArrowId.classList.remove('disable_state');
+    }
+    }
+  }
 
   currentElementFocus(add:number, classNumber: number){
     const visionId = document.getElementById('vision-btn') as HTMLElement;
@@ -85,10 +100,7 @@ export class HomeComponent {
       this.getCurrentVision();
       this.charactersIndex = 0;
       this.getCharacterData(0);
-
-    
-    
-    
+      this.verifyArrowCharactersState();
     setTimeout (() => {
       visionId.classList.remove('disableClick');
     }, 1000);
@@ -232,7 +244,12 @@ export class HomeComponent {
       fetch(`https://genshin.jmp.blue/characters/${character}/`)
         .then(res => res.json())
         .then(data => {
-          this.description = String(data['description'])
+          if(data['description']) {
+            this.description = String(data['description'])
+          }
+          else{
+            this.description = "How many years ago was it? I don't know... but I intend to find out. When I woke up, I was all alone... until I met you two months ago."
+          }
         });
       this.currentCharacterImg = `https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_${valideName}.png`;
       this.currentCharacter = character ?? '';
@@ -269,6 +286,7 @@ export class HomeComponent {
       btnVision3.classList.remove('visionBtnAnimationReverse');
       visionId.classList.remove('disableClick');
       this.currentIndex = this.currentIndex + index;
+      this.verifyArrowState();
     },500)
   }
 
@@ -298,7 +316,30 @@ export class HomeComponent {
       btnCharacter4.classList.remove('characterBtnAnimationReverse');
       btnId.classList.remove('disableClick');
       this.charactersIndex = this.charactersIndex + index;
+      console.log(this.charactersIndex);
+      this.verifyArrowCharactersState();
     },700)
+  }
+
+  verifyArrowCharactersState() {
+    const leftArrowId = document.getElementById('leftArrowCharacters') as HTMLElement;
+    const rightArrowId = document.getElementById('rightArrowCharacters') as HTMLElement;
+    if (this.charactersIndex == 0) {
+      leftArrowId.classList.add('disable_state');
+    }
+    else{
+      leftArrowId.classList.remove('disable_state');
+    }
+    this.allCharacters.forEach(element => {
+      if(this.currentVision in element) {
+        if ((this.charactersIndex + 4) ==  element.lengthCharacters) {
+          rightArrowId.classList.add('disable_state');
+        }
+        else{
+          rightArrowId.classList.remove('disable_state');
+        }
+      }
+    }); 
   }
 
   verifyName(character: string) {
