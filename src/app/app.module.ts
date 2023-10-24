@@ -9,6 +9,7 @@ import { CharactersComponent } from './characters/characters.component';
 import { CharactersTemplateComponent } from './templates/characters-template/characters-template.component';
 import { NavComponent } from './nav/nav.component';
 import { CommonModule } from '@angular/common';
+import { TeamsComponent } from './teams/teams.component';
 
 const routes: Routes = [
 
@@ -21,6 +22,7 @@ const routes: Routes = [
     CharactersComponent,
     CharactersTemplateComponent,
     NavComponent,
+    TeamsComponent,
   ],
   imports: [
     CommonModule,

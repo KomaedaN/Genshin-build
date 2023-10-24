@@ -1,3 +1,4 @@
+<div class="background-page"></div>
 <div *ngIf="displayNav == true" class="nav__display">
         <div class="nav__mobile-container">
             <div class="nav__logo-cross">
@@ -8,13 +9,13 @@
 
             <div class="nav__mobile-content">
                 <div class="nav__mobile-link nav__top">
-                    <a href="" class="nav__link-display">Home</a>
+                    <a class="nav__link-display">Home</a>
                 </div>
                 <div class="nav__mobile-link">
                     <a href="" class="nav__link-display">Characters</a>
                 </div>
                 <div class="nav__mobile-link">
-                    <a href="" class="nav__link-display">Team</a>
+                    <a routerLink="/teams" class="nav__link-display">Team</a>
                 </div>
                 <div class="nav__mobile-link">
                     <a href="" class="nav__link-display">Artifact</a>
@@ -29,7 +30,7 @@
         <div class="nav__list">
             <a href="" class="nav__link">Home</a>
             <a href="" class="nav__link">Characters</a>
-            <a href="" class="nav__link">Team</a>
+            <a routerLink="/teams" class="nav__link">Team</a>
             <a href="" class="nav__link">Artifact</a>
         </div>
     </div>

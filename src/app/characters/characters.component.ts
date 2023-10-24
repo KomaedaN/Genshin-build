@@ -8,63 +8,63 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./characters.component.scss']
 })
 export class CharactersComponent {
-  public name: string = '';
   constructor(private route: ActivatedRoute) { }
   
-  ngOnInit() {
-    this.start();
+  validName = '';
+  currentCharacter = '';
+  currentData = {name: '', weapons: [''], artifact: ''};
+  allCharactersData = [
+    {name: 'Furina', weapons: ['Sword_Ayus', 'Sword_Regalis', 'Sword_Boreas', 'Sword_Deshret'], artifact: '15032'},
+    {name: 'Neuvillette', weapons: ['Catalyst_Iudex', 'Sacrificial Jade', 'Prototype Amber', "Jadefall's Splendor"], artifact: '15031'}
+  ]
+  ngOnInit(): void {
+    this.getCurrentCharacter();
   }
 
-  characters = ["albedo","alhaitham","aloy","amber","arataki-itto","ayaka","ayato","baizhu","barbara","beidou","bennett","candace","chongyun","collei",
-  "cyno","dehya","diluc","diona","dori","eula","faruzan","fischl","freminet","ganyu","gorou","hu-tao","jean","kaeya","kaveh","kazuha","keqing","kirara",
-  "klee","kokomi","kuki-shinobu","layla","lisa","lynette","lyney","mika","mona","nahida","nilou","ningguang","noelle","qiqi","raiden","razor","rosaria",
-  "sara","sayu","shenhe","shikanoin-heizou","sucrose","tartaglia","thoma","tighnari","venti","wanderer","xiangling","xiao","xingqiu","xinyan","yae-miko",
-  "yanfei","yaoyao","yelan","yoimiya","yun-jin","zhongli"];
-
-  allCharacters: { name: string; vision: string;}[] = [];
-
-  displayAll = true;
-  visions: { [key: string]: boolean } = {
-    Hydro: false,
-    Cryo: false,
-    Electro: false,
-    Pyro: false,
-    Anemo: false,
-    Geo: false,
-    Dendro: false,
-  };
-
-  start() {
-    this.characters.forEach(element => {
-      const Url = 'https://genshin.jmp.blue/characters/' + element + '/';
-      fetch(Url)
-      .then(res => res.json())
-      .then(data => {
-        const currentVision = String(data['vision'])
-        const newCharacter = { name: element, vision: currentVision };
-        this.allCharacters.push(newCharacter);
-      });
-    });
+  getCurrentCharacter() {
+    this.route.params.subscribe(data => {
+      this.currentCharacter = data.character;
+    })
+    this.getDataFromCharacter();
+    this.verifyName();
+  }
+  getDataFromCharacter() {
+    for (const element of this.allCharactersData){
+      if(element.name == this.currentCharacter) {
+        this.currentData = element;
+      }
+    }
   }
 
-  displayElement(visionType: string) {
-    this.displayAll = false;
-    this.visions[visionType] = !this.visions[visionType];
-    this.displayAllElements();
-    const id = document.getElementById(visionType + "_btn");
-    if (this.visions[visionType] === true) {
-      id?.classList.add(visionType);
-    } else if (this.visions[visionType] === false) {
-      id?.classList.remove(visionType);
-    };
-    
-    
-
-  }
-
-  displayAllElements() {
-    if (!this.visions["Hydro"] && !this.visions["Cryo"] && !this.visions["Pyro"] && !this.visions["Anemo"] && !this.visions["Electro"] && !this.visions["Dendro"] && !this.visions["Geo"]){
-      this.displayAll = true;
+  verifyName() {
+    if (this.currentCharacter == 'arataki-itto') {
+      this.currentCharacter = 'Itto';
+    }
+    else if (this.currentCharacter == 'shikanoin-heizou') {
+      this.currentCharacter = 'Heizo';
+    }
+    else if (this.currentCharacter == 'raiden') {
+      this.currentCharacter = 'Shougun';
+    }
+    else if (this.currentCharacter == 'yae-miko') {
+      this.currentCharacter = 'Yae';
+    }
+    else if (this.currentCharacter == 'kuki-shinobu') {
+      this.currentCharacter = 'Shinobu';
+    }
+    else if (this.currentCharacter == 'baizhu') {
+      this.currentCharacter = 'Baizhuer';
+    }
+    else if (this.currentCharacter == 'alhaitham') {
+      this.currentCharacter = 'Alhatham';
+    }
+    else if (this.currentCharacter == 'lyney') {
+      this.currentCharacter = 'Liney';
+    }
+    else {
+      const upperName = this.currentCharacter.charAt(0).toUpperCase() + this.currentCharacter.slice(1);
+      const validName = upperName.replace("-", "");
+      this.validName = validName;
     }
   }
 }

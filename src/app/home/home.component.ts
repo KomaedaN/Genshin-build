@@ -30,7 +30,7 @@ export class HomeComponent {
     { pyro: ['hu-tao', 'lyney','xiangling', 'bennett', 'yoimiya'], lengthCharacters: 5},
     { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
     { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'sucrose', 'faruzan'], lengthCharacters: 6},
-    { cryo: ['ayaka', 'eula', 'shenhe', 'ganyu', 'layla'], lengthCharacters: 5},
+    { cryo: ['wriothesley', 'ayaka', 'eula', 'shenhe', 'ganyu', 'layla'], lengthCharacters: 6},
     { electro: ['yae-miko', 'cyno', 'raiden', 'fischl', 'kuki-shinobu'], lengthCharacters: 5},
     { dendro: ['alhaitham', 'baizhu', 'nahida', 'tighnari','kaveh'], lengthCharacters: 5},
   ];
@@ -316,7 +316,6 @@ export class HomeComponent {
       btnCharacter4.classList.remove('characterBtnAnimationReverse');
       btnId.classList.remove('disableClick');
       this.charactersIndex = this.charactersIndex + index;
-      console.log(this.charactersIndex);
       this.verifyArrowCharactersState();
     },700)
   }
@@ -369,8 +368,8 @@ export class HomeComponent {
     }
     else {
       const upperName = character.charAt(0).toUpperCase() + character.slice(1);
-      const valideName = upperName.replace("-", "");
-      return valideName;
+      const validName = upperName.replace("-", "");
+      return validName;
     }
 
   }

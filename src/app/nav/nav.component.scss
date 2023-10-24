@@ -1,3 +1,14 @@
+.background-page{
+    background-attachment: fixed;
+    background-size: cover;
+    position: fixed;
+    z-index: -9999;
+    background-position: center;
+    background-image: url(../../assets/images/stars.png);
+    height: 100%;
+    width: 100%;
+    opacity: 0.9;
+}
 .nav{
     display: flex;
     position: fixed;
