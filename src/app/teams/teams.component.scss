@@ -7,6 +7,18 @@
     font-family: Genshin;
 }
 
+.container{
+    margin: 0 10%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding-bottom: 3rem;
+    padding-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 85rem;
+    row-gap: 2rem;
+}
+
 .team{
     display: flex;
     flex-direction: column;
@@ -14,10 +26,10 @@
         display: flex;
         justify-content: space-evenly;
         align-self: center;
-        width: 50%;
-        min-width: 44rem;
-        padding-top: 2rem;
-        padding-bottom: 2rem;
+        width: 90%;
+        padding: 2rem 1rem;
+        background: rgb(0 0 0 / 80%);
+        border: solid rgb(94 96 118);
     }
     &__name{
         text-align: center;
@@ -26,9 +38,16 @@
     }
     &__character{
         height: 100%;
+        border: solid 2px #c6bbbb;
+        border-radius: 0.5rem;
+        &:hover{
+            transform: scale(1.1);
+            transition-duration: 0.2s;
+            border-color: #61a439;
+        }
     }
     &__character_container{
-        height: 11rem;
+        height: 8rem;
     }
 }
 
@@ -40,14 +59,4 @@
     background: radial-gradient(circle, rgba(94,33,105,1) 0%, rgba(158,39,199,1) 100%);
 }
 
-.Neuvillette{
-    background: linear-gradient(18deg, rgba(0, 191, 255, 0.9) 0%, rgba(171, 209, 215, 0.9) 44%, rgba(124, 221, 255, 0.9) 100%);
-}
 
-.Liney{
-    background: linear-gradient(18deg, rgba(236, 73, 35, 0.8) 0%, rgba(218, 127, 106, 1) 44%, rgba(236, 73, 35, 0.8) 100%);
-}
-
-.Tartaglia{
-    background: linear-gradient(18deg, rgba(0, 191, 255, 0.9) 0%, rgba(171, 209, 215, 0.9) 44%, rgba(124, 221, 255, 0.9) 100%);
-}

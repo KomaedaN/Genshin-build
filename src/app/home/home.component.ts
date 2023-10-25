@@ -29,8 +29,8 @@ export class HomeComponent {
     { hydro: [ 'neuvillette', 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 7},
     { pyro: ['hu-tao', 'lyney','xiangling', 'bennett', 'yoimiya'], lengthCharacters: 5},
     { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
-    { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'sucrose', 'faruzan'], lengthCharacters: 6},
-    { cryo: ['wriothesley', 'ayaka', 'eula', 'shenhe', 'ganyu', 'layla'], lengthCharacters: 6},
+    { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'faruzan'], lengthCharacters: 5},
+    { cryo: ['wriothesley', 'ayaka', 'eula', 'shenhe', 'ganyu'], lengthCharacters: 5},
     { electro: ['yae-miko', 'cyno', 'raiden', 'fischl', 'kuki-shinobu'], lengthCharacters: 5},
     { dendro: ['alhaitham', 'baizhu', 'nahida', 'tighnari','kaveh'], lengthCharacters: 5},
   ];
