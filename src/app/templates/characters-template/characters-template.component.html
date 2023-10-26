@@ -1,20 +1,20 @@
 <app-nav></app-nav>
 <section class="element__btn">
-    <img id="Hydro_btn" src="https://genshin.jmp.blue/elements/hydro/icon" alt="Hydro" (click)="displayElement('Hydro')" class="element__img">
-    <img id="Pyro_btn" src="https://genshin.jmp.blue/elements/pyro/icon" alt="Pyro" (click)="displayElement('Pyro')" class="element__img">
-    <img id="Electro_btn" src="https://genshin.jmp.blue/elements/electro/icon" alt="Electro" (click)="displayElement('Electro')" class="element__img">
-    <img id="Anemo_btn" src="https://genshin.jmp.blue/elements/anemo/icon" alt="Anemo" (click)="displayElement('Anemo')" class="element__img">
-    <img id="Cryo_btn" src="https://genshin.jmp.blue/elements/cryo/icon" alt="Cryo" (click)="displayElement('Cryo')" class="element__img">
-    <img id="Geo_btn" src="https://genshin.jmp.blue/elements/geo/icon" alt="Geo" (click)="displayElement('Geo')" class="element__img">
-    <img id="Dendro_btn" src="https://genshin.jmp.blue/elements/dendro/icon" alt="Dendro" (click)="displayElement('Dendro')" class="element__img">
+    <img id="Hydro_btn" src="https://genshin.jmp.blue/elements/hydro/icon" alt="Hydro" (click)="displayElement('Hydro')" class="element__img hydro">
+    <img id="Pyro_btn" src="https://genshin.jmp.blue/elements/pyro/icon" alt="Pyro" (click)="displayElement('Pyro')" class="element__img pyro">
+    <img id="Electro_btn" src="https://genshin.jmp.blue/elements/electro/icon" alt="Electro" (click)="displayElement('Electro')" class="element__img electro">
+    <img id="Anemo_btn" src="https://genshin.jmp.blue/elements/anemo/icon" alt="Anemo" (click)="displayElement('Anemo')" class="element__img anemo">
+    <img id="Cryo_btn" src="https://genshin.jmp.blue/elements/cryo/icon" alt="Cryo" (click)="displayElement('Cryo')" class="element__img cryo">
+    <img id="Geo_btn" src="https://genshin.jmp.blue/elements/geo/icon" alt="Geo" (click)="displayElement('Geo')" class="element__img geo">
+    <img id="Dendro_btn" src="https://genshin.jmp.blue/elements/dendro/icon" alt="Dendro" (click)="displayElement('Dendro')" class="element__img dendro">
 </section>
 
-<section class="card_section">
+<section class="card__section">
     <ng-container *ngFor="let character of allChara">
-        <div *ngIf="displayAll === true || visions[character.vision] === true" class="card {{character.vision}}">
+        <div *ngIf="displayAll === true || visions[character.vision] === true" class="card" routerLink="/characters/{{character.icon}}" [style.background-image]="'url(' + cardUrl + character.icon + '_P.png?vh=2023092501)'" [ngClass]="{'yae': character.icon === 'Yae'}">
             <img src="https://api.ambr.top/assets/UI/UI_AvatarIcon_{{character.icon}}.png" class=card__img>
-            <div id=test>
-                <h1>{{character.name}}</h1>
+            <div class="card__character">
+                <h1 class="card__name">{{character.name}}</h1>
                 <h2>Vision {{character.vision}}</h2>
             </div>
         </div>

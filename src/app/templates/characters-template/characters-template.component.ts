@@ -28,7 +28,7 @@ export class CharactersTemplateComponent {
     {name: "Shenhe", vision: "Cryo", icon: "Shenhe"}, 
     {name: "Tartaglia", vision: "Hydro", icon: "Tartaglia"}, {name: "Tighnari", vision: "Dendro", icon: "Tighnari"}, {name: "Venti", vision: "Anemo", icon: "Venti"},
     {name: "Wanderer", vision: "Anemo", icon: "Wanderer"}, {name: "Wriothesley", vision: "Cryo", icon: "Wriothesley"}, {name: "Xiangling", vision: "Pyro", icon: "Xiangling"}, 
-    {name: "Xiao", vision: "Anemo", icon: "Xiao"},{name: "Xingqiu", vision: "Hydro", icon: "Xingqiu"}, {name: "Xiangling", vision: "Pyro", icon: "Xiangling"},
+    {name: "Xiao", vision: "Anemo", icon: "Xiao"},{name: "Xingqiu", vision: "Hydro", icon: "Xingqiu"},
     {name: "Yae-miko", vision: "Electro", icon: "Yae"}, {name: "Yelan", vision: "Hydro", icon: "Yelan"}, {name: "Yoimiya", vision: "Pyro", icon: "Yoimiya"},
     {name: "Yun-jin", vision: "Geo", icon: "Yunjin"}, {name: "Zhongli", vision: "Geo", icon: "Zhongli"},
   ]
@@ -43,6 +43,8 @@ export class CharactersTemplateComponent {
     Geo: false,
     Dendro: false,
   };
+
+  cardUrl = 'https://api.ambr.top/assets/UI/namecard/UI_NameCardPic_';
 
   displayElement(visionType: string) {
     this.displayAll = false;

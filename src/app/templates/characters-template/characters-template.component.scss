@@ -1,3 +1,106 @@
-.element__btn{
-    margin-top: 7rem;
+@font-face {
+    font-family: Genshin;
+    src: url('../../../assets/zh-cn.ttf');
+}
+
+*{
+    font-family: Genshin;
+}
+
+.element{
+    &__btn{
+        padding-top: 6rem;
+        text-align: center;
+    }
+    &__img{
+        padding: 0.5rem;
+        border: 2px solid rgba(146, 132, 46, 0.5);
+        margin: 0 0.5rem;
+        border-radius: 0.5rem;
+        cursor: pointer;
+        background: rgb(0 0 0 / 50%);
+        &:hover{
+            background: rgba(255, 255, 255, 0.7);
+        }
+    }
+}
+
+.card{
+    background-size: cover;
+    background-position: center;
+    color: black;
+    text-shadow: 0px 0px 5px white;
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+    border-radius: 0.7rem;
+    cursor: pointer;
+    border: solid 2px black;
+    animation: cardStart 0.4s forwards;
+    &:hover{
+        transform: scale(1.1) !important;
+        transition-duration: 0.4s;
+        border-color: white;
+    }
+    &__section{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        column-gap: 2rem;
+        row-gap: 2rem;
+        margin: 2rem 10% 0 10%;
+    }
+    &__img{
+        height: 11rem;
+        border-bottom-left-radius: 0.7rem;
+    }
+    &__name{
+        font-size: 2.3rem;
+        margin: 2.3rem 0 0 0;
+    }
+    &__character{
+        text-align: center;
+    }
+}
+
+.yae{
+    background-image: url("https://api.ambr.top/assets/UI/namecard/UI_NameCardPic_Yae1_P.png?vh=2023092501") !important;
+}
+
+.Hydro {
+    background: linear-gradient(18deg, rgb(0 126 255 / 90%) 0%, rgb(76 86 125 / 90%) 44%, rgb(31 98 193 / 90%) 100%) !important;
+}
+
+.Cryo {
+    background: linear-gradient(18deg, rgb(79 85 207 / 80%) 0%, rgb(85 195 214 / 80%) 44%, rgb(255 255 255 / 80%) 100%) !important;
+}
+
+.Electro {
+    background: linear-gradient(18deg, rgba(219,115,247,1) 0%, rgba(148,93,196,1) 44%, rgba(235,194,234,0.8) 100%) !important;
+}
+
+.Dendro {
+    background: linear-gradient(18deg, rgba(166,201,56,1) 0%, rgba(93,196,108,1) 44%, rgba(194,235,195,0.8) 100%) !important;
+}
+
+.Geo {
+    background: linear-gradient(18deg, rgb(224 177 61 / 80%) 0%, rgb(144 127 10 / 80%) 44%, rgb(224 224 101 / 80%) 100%) !important;
+}
+
+.Anemo {
+    background: linear-gradient(18deg, rgba(53,150,151,0.8) 0%, rgba(158,230,198,0.8) 44%, rgba(61,162,163,0.8) 100%) !important;
+}
+
+.Pyro {
+    background: linear-gradient(18deg, rgba(236,73,35,0.8) 0%, rgb(218 127 106 / 80%) 44%, rgba(236,73,35,0.8) 100%) !important;
+}
+
+
+@keyframes cardStart {
+    0%{
+        transform: translate(0, 3rem);
+        opacity: 0.1;
+    }
+
+    100%{
+        transform: translate(0);
+    }
 }
