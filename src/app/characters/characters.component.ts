@@ -12,10 +12,11 @@ export class CharactersComponent {
   
   validName = '';
   currentCharacter = '';
-  currentData = {name: '', weapons: [''], artifact: ''};
+  currentData = {name: '', weapons: [['']], artifact: '', mainstats: [''], substats: [''], skills: [''], ascensions: [''], talents: ['']};
   allCharactersData = [
-    {name: 'Furina', weapons: ['Sword_Ayus', 'Sword_Regalis', 'Sword_Boreas', 'Sword_Deshret'], artifact: '15032'},
-    {name: 'Neuvillette', weapons: ['Catalyst_Iudex', 'Sacrificial Jade', 'Prototype Amber', "Jadefall's Splendor"], artifact: '15031'}
+    {name:'Furina',weapons:[['Sword_Regalis','five'],['Sword_Ayus','five'],['Sword_Boreas','four'],['Sword_Deshret','five']],artifact:'15032',
+    mainstats:['ER = HP%','HP% > Hydro DMG','TC/DC'],substats:['TC','DC','ER','HP%'],skills:['Burst','Skill','AA'],
+    ascensions:['Narcissusborn_Normal_01','113057','101238','112038','112039','112040'],talents:['Ptahur_Devourer','113047','104341','104342','104343']},
   ]
   ngOnInit(): void {
     this.getCurrentCharacter();
