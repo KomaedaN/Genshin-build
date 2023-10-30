@@ -18,7 +18,8 @@ export class CharactersTemplateComponent {
     {name: "Albedo", vision: "Geo", icon: "Albedo"}, {name: "Alhaitham", vision: "Dendro", icon: "Alhatham"}, {name: "Arataki-itto", vision: "Geo", icon: "Itto"}, 
     {name: "Ayaka", vision: "Cryo", icon: "Ayaka"}, {name: "Ayato", vision: "Hydro", icon: "Ayato"}, {name: "Baizhu", vision: "Dendro", icon: "Baizhuer"}, 
     {name: "Bennett", vision: "Pyro", icon: "Bennett"}, {name: "Cyno", vision: "Electro", icon: "Cyno"}, {name: "Eula", vision: "Cryo", icon: "Eula"},
-    {name: "Faruzan", vision: "Anemo", icon: "Faruzan"}, {name: "Fischl", vision: "Electro", icon: "Fischl"}, {name: "Ganyu", vision: "Cryo", icon: "Ganyu"},
+    {name: "Faruzan", vision: "Anemo", icon: "Faruzan"}, {name: "Fischl", vision: "Electro", icon: "Fischl"}, {name: "Furina", vision: "Hydro", icon: "Furina"},
+    {name: "Ganyu", vision: "Cryo", icon: "Ganyu"},
     {name: "Gorou", vision: "Geo", icon: "Gorou"}, {name: "Heizou", vision: "Anemo", icon: "Heizo"},
     {name: "Hu-tao", vision: "Pyro", icon: "Hutao"}, {name: "Kazuha", vision: "Anemo", icon: "Kazuha"},
     {name: "Kokomi", vision: "Hydro", icon: "Kokomi"}, {name: "Kuki-shinobu", vision: "Electro", icon: "Shinobu"}, {name: "Lyney", vision: "Pyro", icon: "Liney"},
@@ -28,7 +29,7 @@ export class CharactersTemplateComponent {
     {name: "Shenhe", vision: "Cryo", icon: "Shenhe"}, 
     {name: "Tartaglia", vision: "Hydro", icon: "Tartaglia"}, {name: "Tighnari", vision: "Dendro", icon: "Tighnari"}, {name: "Venti", vision: "Anemo", icon: "Venti"},
     {name: "Wanderer", vision: "Anemo", icon: "Wanderer"}, {name: "Wriothesley", vision: "Cryo", icon: "Wriothesley"}, {name: "Xiangling", vision: "Pyro", icon: "Xiangling"}, 
-    {name: "Xiao", vision: "Anemo", icon: "Xiao"},{name: "Xingqiu", vision: "Hydro", icon: "Xingqiu"},
+    {name: "Xiao", vision: "Anemo", icon: "Xiao"}, {name: "Xingqiu", vision: "Hydro", icon: "Xingqiu"},
     {name: "Yae-miko", vision: "Electro", icon: "Yae"}, {name: "Yelan", vision: "Hydro", icon: "Yelan"}, {name: "Yoimiya", vision: "Pyro", icon: "Yoimiya"},
     {name: "Yun-jin", vision: "Geo", icon: "Yunjin"}, {name: "Zhongli", vision: "Geo", icon: "Zhongli"},
   ]

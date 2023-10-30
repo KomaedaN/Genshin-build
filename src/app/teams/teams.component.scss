@@ -8,7 +8,6 @@
 }
 
 .container{
-    margin: 0 10%;
     display: grid;
     grid-template-columns: 1fr 1fr;
     padding-bottom: 3rem;
@@ -29,7 +28,7 @@
         width: 90%;
         padding: 2rem 1rem;
         background: rgb(0 0 0 / 80%);
-        border: solid rgb(94 96 118);
+        border: 1px solid rgb(94 96 118);
     }
     &__name{
         text-align: center;
@@ -60,3 +59,94 @@
 }
 
 
+@media screen and (max-width: 1400px) {
+    .container{
+        width: 75rem;
+        row-gap: 1.5rem;
+    }
+
+    .team{
+        &__container{
+            padding: 1.1rem 0;
+        }
+        &__character_container{
+            height: 6.7rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .container{
+        width: 65rem;
+    }
+    .team{
+        &__character_container{
+            height: 6rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1050px) {
+    .container{
+        width: 50rem;
+        grid-template-columns: 1fr;
+    }
+    .team{
+        &__character_container{
+            height: 8rem;
+        }
+        &__container{
+            padding: 2rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 830px) {
+    .container{
+        width: 42rem;
+    }
+    .team{
+        &__character_container{
+            height: 7rem;
+        }
+        &__container{
+            padding: 1.5rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container{
+        width: 35rem;
+    }
+    .team{
+        &__character_container{
+            height: 6rem;
+        }
+        &__container{
+            padding: 1.1rem 0;
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .container{
+        width: 24rem;
+    }
+    .team{
+        &__character_container{
+            height: 4.4rem;
+        }
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .container{
+        width: 21rem;
+    }
+    .team{
+        &__character_container{
+            height: 4rem;
+        }
+    }
+}
