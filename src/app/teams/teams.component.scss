@@ -131,22 +131,33 @@
 
 @media screen and (max-width: 600px) {
     .container{
-        width: 24rem;
+        width: 30rem;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .container{
+        width: 100%;
     }
     .team{
         &__character_container{
-            height: 4.4rem;
+            height: 6rem;
+            width: 5.8rem;
+        }
+        &__container{
+            width: 100%;
+            justify-content: center;
+            background: none;
+            border: none;
         }
     }
 }
 
-@media screen and (max-width: 400px) {
-    .container{
-        width: 21rem;
-    }
+
+@media screen and (max-width: 425px) {
     .team{
         &__character_container{
-            height: 4rem;
+            width: 5rem;
         }
     }
 }
