@@ -1,87 +1,89 @@
 <app-nav></app-nav>
-<img src="https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_{{validName}}.png" alt="splash" class="character__splash">
-<section class="character__container">
-    <h1 class="character__name">{{currentData.name}}</h1>
-    <h2 class="character__title">Weapons :</h2>
-    <div class="character__weapons">
-        <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[0][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[0][1]}}">
-        <p class="character__text">></p>
-        <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[1][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[1][1]}}">
-        <p class="character__text">></p>
-        <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[2][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[2][1]}}">
-        <p class="character__text">></p>
-        <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[3][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[3][1]}}">
-    </div>  
-    <h2 class="character__title">Artifact :</h2>
-    <div class="character__artifacts">
-        <div>
-            <img src="https://api.ambr.top/assets/UI/reliquary/UI_RelicIcon_{{currentData.artifact}}_4.png?vh=2023092501" alt="artifact" class="character__artifact">
-            <p class="character__text">{{currentData.skills[0]}} > {{currentData.skills[1]}} > {{currentData.skills[2]}}</p>
+<img src="https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_{{imgName}}.png" alt="splash" class="character__splash">
+<section class="character__section">
+    <div class="character__container">
+        <h1 class="character__name">{{currentData.name}}</h1>
+        <h2 class="character__title">Weapons :</h2>
+        <div class="character__weapons">
+            <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[0][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[0][1]}}">
+            <p class="character__text">></p>
+            <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[1][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[1][1]}}">
+            <p class="character__text">></p>
+            <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[2][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[2][1]}}">
+            <p class="character__text">></p>
+            <img src="https://api.ambr.top/assets/UI/UI_EquipIcon_{{currentData.weapons[3][0]}}.png?vh=2023092501" alt="weapon" class="character__weapon {{currentData.weapons[3][1]}}">
+        </div>  
+        <h2 class="character__title">Artifact :</h2>
+        <div class="character__artifacts">
+            <div>
+                <img src="https://api.ambr.top/assets/UI/reliquary/UI_RelicIcon_{{currentData.artifact}}_4.png?vh=2023092501" alt="artifact" class="character__artifact">
+                <p class="character__text">{{currentData.skills[0]}} > {{currentData.skills[1]}} > {{currentData.skills[2]}}</p>
+            </div>
+            <div>
+                <h2 class="character__stat character__substats">Substats</h2>
+                <p class="character__substat">1. {{currentData.substats[0]}}</p>
+                <p class="character__substat">2. {{currentData.substats[1]}}</p>
+                <p class="character__substat">3. {{currentData.substats[2]}}</p>
+                <p class="character__substat">4. {{currentData.substats[3]}}</p>
+            </div>
+            <div>
+                <h2 class="character__stat character__mainstats">Main stats</h2>
+                <p class="character__mainstat">Sands : {{currentData.mainstats[0]}}</p>
+                <p class="character__mainstat">Goblet : {{currentData.mainstats[1]}}</p>
+                <p class="character__mainstat">Circle : {{currentData.mainstats[2]}}</p>
+            </div>
         </div>
-        <div>
-            <h2 class="character__title character__substats">Substats</h2>
-            <p class="character__substat">1. {{currentData.substats[0]}}</p>
-            <p class="character__substat">2. {{currentData.substats[1]}}</p>
-            <p class="character__substat">3. {{currentData.substats[2]}}</p>
-            <p class="character__substat">4. {{currentData.substats[3]}}</p>
-        </div>
-        <div>
-            <h2 class="character__title character__mainstats">Main stats</h2>
-            <p class="character__mainstat">Sands : {{currentData.mainstats[0]}}</p>
-            <p class="character__mainstat">Goblet : {{currentData.mainstats[1]}}</p>
-            <p class="character__mainstat">Circle : {{currentData.mainstats[2]}}</p>
-        </div>
-    </div>
-    <h2 class="character__title">Ascensions :</h2>
-    <div class="character__ascensions">
-        <div class="character__container_boss">
-            <img src="https://api.ambr.top/assets/UI/monster/UI_MonsterIcon_{{currentData.ascensions[0]}}.png?vh=2023092501" alt="boss" class="character__boss common">
+        <h2 class="character__title">Ascensions :</h2>
+        <div class="character__ascensions">
+            <div class="character__container_boss">
+                <img src="https://api.ambr.top/assets/UI/monster/UI_MonsterIcon_{{currentData.ascensions[0]}}.png?vh=2023092501" alt="boss" class="character__boss common">
+                <div class="character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[1]}}.png?vh=2023092501" alt="materials" class="four character__material">
+                    <p class="character__text character__numbers">x46</p>
+                </div>
+            </div>
             <div class="character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[1]}}.png?vh=2023092501" alt="materials" class="four character__material">
-                <p class="character__text character__numbers">x46</p>
+                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[2]}}.png?vh=2023092501" alt="materials" class="common character__material">
+                <p class="character__text character__numbers">x168</p>
+            </div>
+            <div class="character__container_material_boss">
+                <div class="end character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[3]}}.png?vh=2023092501" alt="materials" class="common character__material">
+                    <p class="character__text character__numbers">x18</p>
+                </div>
+                <div class="start character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[4]}}.png?vh=2023092501" alt="materials" class="uncommon  character__material">
+                    <p class="character__text character__numbers">x30</p>
+                </div>
+                <div class="end character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[5]}}.png?vh=2023092501" alt="materials" class="rare character__material">
+                    <p class="character__text character__numbers">x36</p>
+                </div>
             </div>
         </div>
-        <div class="character__container_numbers">
-            <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[2]}}.png?vh=2023092501" alt="materials" class="common character__material">
-            <p class="character__text character__numbers">x168</p>
-        </div>
-        <div class="character__container_material_boss">
-            <div class="end character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[3]}}.png?vh=2023092501" alt="materials" class="common character__material">
-                <p class="character__text character__numbers">x18</p>
-            </div>
-            <div class="start character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[4]}}.png?vh=2023092501" alt="materials" class="uncommon  character__material">
-                <p class="character__text character__numbers">x30</p>
-            </div>
-            <div class="end character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.ascensions[5]}}.png?vh=2023092501" alt="materials" class="rare character__material">
-                <p class="character__text character__numbers">x36</p>
-            </div>
-        </div>
-    </div>
 
-    <h2 class="character__title">Talents :</h2>
-    <div class="character__talents">
-        <div class="character__container_boss">
-            <img src="https://api.ambr.top/assets/UI/monster/UI_MonsterIcon_{{currentData.talents[0]}}.png?vh=2023092501" alt="boss" class="character__boss common">
-            <div class="character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[1]}}.png?vh=2023092501" alt="materials" class="five character__material">
-                <p class="character__text character__numbers">x46</p>
+        <h2 class="character__title">Talents :</h2>
+        <div class="character__talents">
+            <div class="character__container_boss">
+                <img src="https://api.ambr.top/assets/UI/monster/UI_MonsterIcon_{{currentData.talents[0]}}.png?vh=2023092501" alt="boss" class="character__boss common">
+                <div class="character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[1]}}.png?vh=2023092501" alt="materials" class="five character__material">
+                    <p class="character__text character__numbers">x46</p>
+                </div>
             </div>
-        </div>
-        <div class="character__container_material_talents">
-            <div class="end character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[2]}}.png?vh=2023092501" alt="materials" class="uncommon character__material">
-                <p class="character__text character__numbers">x9</p>
-            </div>
-            <div class="start character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[3]}}.png?vh=2023092501" alt="materials" class="rare  character__material">
-                <p class="character__text character__numbers">x63</p>
-            </div>
-            <div class="end character__container_numbers">
-                <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[4]}}.png?vh=2023092501" alt="materials" class="four character__material">
-                <p class="character__text character__numbers">x114</p>
+            <div class="character__container_material_talents">
+                <div class="end character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[2]}}.png?vh=2023092501" alt="materials" class="uncommon character__material">
+                    <p class="character__text character__numbers">x9</p>
+                </div>
+                <div class="start character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[3]}}.png?vh=2023092501" alt="materials" class="rare  character__material">
+                    <p class="character__text character__numbers">x63</p>
+                </div>
+                <div class="end character__container_numbers">
+                    <img src="https://api.ambr.top/assets/UI/UI_ItemIcon_{{currentData.talents[4]}}.png?vh=2023092501" alt="materials" class="four character__material">
+                    <p class="character__text character__numbers">x114</p>
+                </div>
             </div>
         </div>
     </div>
