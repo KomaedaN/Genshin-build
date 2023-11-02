@@ -33,6 +33,10 @@ export class CharactersComponent {
     mainstats:['ER = HP%','HP% > Hydro DMG','TC/DC'],substats:['TC','DC','ER','HP%'],skills:['Burst','Skill','AA'],
     ascensions:['Narcissusborn_Normal_01','113057','101238','112038','112039','112040'],talents:['Ptahur_Devourer','113047','104341','104342','104343']},
 
+    {name:'Hutao',weapons:[['Pole_Homa','five'],['Pole_Deshret','five'],['Pole_Shanty','four'],['Pole_Stardust','four']],artifact:'15006',
+    mainstats:['HP% / EM','Pyro DMG','TC / DC'],substats:['TC','DC','EM','ATK%'],skills:['AA','Skill','Burst'],
+    ascensions:['Drake_Primo_Rock','113016','100029','112038','112039','112040'],talents:['Tartaglia','113014','104313','104314','104315']},
+
     {name:'Tartaglia',weapons:[['Bow_Worldbane','five'],['Bow_Kirin','five'],['Bow_Narukami','five'],['Bow_Ayus','five']],artifact:'15029',
     mainstats:['ATK%','Hydro DMG','TC / DC'],substats:['TC','DC','ATK%','EM'],skills:['Skill','Burst','AA'],
     ascensions:['Oceanid','113012','100033','112032','112033','112034'],talents:['Tartaglia','113014','104301','104302','104303']},
@@ -66,6 +70,9 @@ export class CharactersComponent {
       if(element.name == this.currentCharacter) {
         this.currentData = element;
       }
+    }
+    if (this.currentData.name == '') {
+      window.location.href='#/characters';
     }
   }
 

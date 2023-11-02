@@ -10,9 +10,9 @@
 .character{
     &__container{
         background: rgb(1,1,1,0.80);
-        padding-top: 2rem;
+        padding: 2rem 0;
         margin: auto;
-        width: 80%;
+        width: 70%;
         border-top-right-radius: 2rem;
         border-top-left-radius: 2rem;
     }
@@ -36,11 +36,12 @@
     }
     &__title{
         color: white;
-        padding-left: 1.5rem;
-        margin: 4rem 0 2rem 0;
+        padding-left: 2rem;
+        margin: 7rem 0 2rem 0;
+        font-size: 2rem;
     }
     &__weapon{
-        height: 7rem;
+        height: 11rem;
         border: solid 2px #c6bbbb;
         border-radius: 0.5rem;
     }
@@ -58,7 +59,7 @@
     }
     &__substat{
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding-left: 2rem;
     }
     &__mainstats{
@@ -66,7 +67,7 @@
     }
     &__mainstat{
         color: white;
-        font-size: 1rem;
+        font-size: 1.5rem;
         padding-left: 0.5rem;
     }
     &__text{
@@ -77,7 +78,7 @@
     }
     &__ascensions{
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
+        grid-template-columns: 2fr 1fr 2fr;
     }
     &__boss{
         height: 10rem;
@@ -90,7 +91,7 @@
     }
     &__talents{
         display: grid;
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 2fr 3fr;
     }
     &__numbers{
         color: black;
@@ -113,12 +114,12 @@
         height: 15rem;
         justify-self: center;
         column-gap: 2rem;
+        margin-right: 3rem;
     }
     &__container_material_talents{
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
         height: 15rem;
-        column-gap: 2rem;
     }
     &__container_numbers{
         display: flex;
@@ -129,6 +130,7 @@
         color: white;
         padding-left: 1.5rem;
         margin-top: 0;
+        font-size: 2rem;
     }
     &__section{
         padding-top: 10rem;
@@ -163,36 +165,87 @@
     align-self: flex-start;
 }
 
+@media screen and (max-width: 1600px) {
+    .character{
+        &__container{
 
+            width: 80%;
+        }
+    }
+}
+
+
+@media screen and (max-width: 1300px) {
+    .character{
+        &__container{
+            width: 90%;
+        }
+        &__material{
+            height: 7rem;
+            width: 7rem;
+        }
+        &__numbers{
+            width: 7rem;
+        }
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .character{
+        &__ascensions{
+            grid-template-columns: none;
+            row-gap: 2rem;
+        }
+        &__container_material_boss{
+            margin: 0;
+        }
+    }
+}
 
 @media screen and (max-width: 850px) {
     .character{
-        &__ascensions{
-            grid-template-columns: 2fr 1fr;
-        }
-        &__container_material_boss{
-            align-content: center;
-            grid-area: 2 /1 /3 /3;
-        }
-        &__container_numbers{
-            justify-self: normal;
-        }
         &__talents{
             grid-template-columns: 1fr;
             justify-items: center;
             align-content: center;
-        }
-        &__container_material_talents{
-            align-content: center;
+            row-gap: 2rem;
         }
         &__container{
-            padding-top: 5rem;
-            width: 100%;
+            padding-top: 2rem;
+            width: 95%;
+        }
+        &__weapon{
+            height: 7rem;
         }
         &__section{
-            padding-top: 0;
+            padding-top: 6rem;
         }
-        
+        &__container_material{
+            column-gap: 2rem;
+        }
+        &__container_material_talents{
+            column-gap: 2rem;
+        }
+    }
+    .end{
+        align-self: flex-start;
+    }
+    .start{
+        align-self: center;
+    }
+    .start_mobile{
+        align-self: flex-start !important;
+    }
+    .center{
+        align-self: center !important;
+    }
+}
+
+@media screen and (max-width: 650px) {
+    .character{
+    &__container{
+        width: 100%;
+    }
     }
 }
 
@@ -209,6 +262,10 @@
         }
         &__substat{
             padding-left: 1.5rem;
+            font-size: 1rem;
+        }
+        &__mainstat{
+            font-size: 1rem;
         }
         &__mainstats{
             padding-left: 1rem;
@@ -227,8 +284,26 @@
         }
         &__boss{
             height: 8rem;
+            margin-right: 2rem;
+            margin-bottom: 2rem;
         }
-        
-        
+        &__title{
+            margin-top: 4rem;
+        }
+        &__talent_title{
+            margin-top: 0;
+        }
+        &__container_boss{
+            justify-content: center;
+        }
+        &__ascensions{
+            grid-template-columns: none;
+        }
+        &__section{
+            padding-top: 0;
+        }
+        &__container{
+            padding-top: 5rem;
+        }
     }
 }
