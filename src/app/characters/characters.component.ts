@@ -24,6 +24,35 @@ export class CharactersComponent {
     {name:'Ayaka',weapons:[['Sword_Narukami','five'],['Sword_Amenoma','five'],['Sword_Ayus','five'],['Sword_Vorpal','four']],artifact:'14001',
     mainstats:['ATK%','Cryo DMG','DC'],substats:['DC','ATK%','ER','TC'],skills:['Burst','AA','Skill'],
     ascensions:['Samurai_Ningyo','113023','101202','112044','112045','112046'],talents:['Dahaka','113018','104323','104324','104325']},
+    {name:'Ayato',weapons:[['Sword_Amenoma','five'],['Sword_Morax','five'],['Sword_Narukami','five'],['Sword_Bloodstained','four']],artifact:'15001',
+    mainstats:['ATK%','Hydro DMG','TC/DC'],substats:['TC','DC','ATK%','ER'],skills:['Skill','Burst','AA'],
+    ascensions:['Effigy_Water','113028','101202','112044','112045','112046'],talents:['Shougun_Mitakenarukami','113032','104323','104324','104325']},
+    {name:'Baizhu',weapons:[['Catalyst_Proto','four'],['Catalyst_Pulpfic','rare'],['Catalyst_Zephyrus','four'],['Catalyst_Morax','five']],artifact:'15025',
+    mainstats:['ER / HP%','HP%','HP%'],substats:['ER','HP%','Flat HP','TC'],skills:['Burst','Skill','AA'],
+    ascensions:['Invoker_Archdeacon','113045','100034','104316','104317','104318'],talents:['Apep','113046','112059','112060','112061']},
+    {name:'Bennett',weapons:[['Sword_Narukami','five'],['Sword_Falcon','five'],['Sword_Dvalin','five'],['Sword_Widsith','five']],artifact:'15007',
+    mainstats:['ER > ATK%','Pyro DMG','TC/DC'],substats:['ER','TC','DC','ATK%'],skills:['Burst','Skill','AA'],
+    ascensions:['Regisvine_Fire','113011','100024','112035','112036','112037'],talents:['Dvalin','113003','104304','104305','104306']},
+    {name:'Cyno',weapons:[['Pole_Deshret','five'],['Pole_Shanty','four'],['Pole_Morax','five'],['Pole_Ruby','rare']],artifact:'15005',
+    mainstats:['EM','Electro DMG','TC / DC > EM'],substats:['ER','TC/DC','EM','ATK%'],skills:['Burst','Skill','AA'],
+    ascensions:['Regisvine_Electric','113037','101225','112008','112009','112010'],talents:['Shougun_Mitakenarukami','113032','104329','104330','104331']},
+    {name:'Fischl',weapons:[['Bow_Worldbane','five'],['Bow_Kirin','five'],['Bow_Ayus','five'],['Bow_Dvalin','five']],artifact:'15032',
+    mainstats:['EM / ATK%','Electro DMG','TC / DC'],substats:['TC','DC','ATK%','EM'],skills:['Skill','Burst','AA'],
+    ascensions:['Effigy_Electric','113002','100055','112011','112012','112013'],talents:['LupiBoreas','113008','104307','104308','104309']},
+    {name:'Shinobu',weapons:[['Sword_Widsith','five'],['Sword_Pleroma','four'],['Sword_Exotic','four'],['Sword_Deshret','five']],artifact:'15028',
+    mainstats:['EM','EM','EM'],substats:['EM','HP%','Flat HP','ER'],skills:['Skill','Burst','AA'],
+    ascensions:['Nithhoggr_None','113035','101205','112053','112054','112055'],talents:['Shougun_Mitakenarukami','113033','104323','104324','104325']},
+    {name:'Raiden',weapons:[['Pole_Narukami','five'],['Pole_Homa','five'],['Pole_Morax','five'],['Pole_Deshret','five']],artifact:'15020',
+    mainstats:['ER > ATK%','Electro DMG','TC / DC'],substats:['ER','TC','DC','ATK%'],skills:['Burst','Skill','AA'],
+    ascensions:['Raijin','113029','101208','112044','112045','112046'],talents:['LaSignora','113025','104326','104327','104328']},
+
+
+
+    {name:'Yae',weapons:[['Catalyst_Narukami','five'],['Catalyst_Iudex','five'],['Catalyst_Fourwinds','five'],['Catalyst_Dvalin','five']],artifact:'15032',
+    mainstats:['ER / EM / ATK%','Electro DMG','TC / DC'],substats:['TC/DC','EM','ATK%','ER'],skills:['Skill','Burst','AA'],
+    ascensions:['Drake_Deepsea_Ice','113031','101206','112044','112045','112046'],talents:['Shougun_Mitakenarukami','113034','104326','104327','104328']},
+
+
 
     {name:'Charlotte',weapons:[['Catalyst_Dvalin','five'],['Catalyst_Proto','four'],['Catalyst_Zephyrus','four'],['Catalyst_Pulpfic','rare']],artifact:'15017',
     mainstats:['ER','ATK%','ATK%'],substats:['ER','ATK%','TC','DC'],skills:['Burst','Skill','AA'],
@@ -86,11 +115,8 @@ export class CharactersComponent {
     else if (this.currentCharacter == 'Shougun') {
       this.currentCharacter = 'Raiden';
     }
-    else if (this.currentCharacter == 'Yae') {
-      this.currentCharacter = 'Yae-miko';
-    }
-    else if (this.currentCharacter == 'Shinobu') {
-      this.currentCharacter = 'Kuki-shinobu';
+    else if (this.currentCharacter == 'Yae-miko') {
+      this.currentCharacter = 'Yae';
     }
     else if (this.currentCharacter == 'Baizhuer') {
       this.currentCharacter = 'Baizhu';
