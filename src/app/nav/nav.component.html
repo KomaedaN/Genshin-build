@@ -1,5 +1,6 @@
 <div class="background-page"></div>
-<div *ngIf="displayNav == true" class="nav__display">
+@if (displayNav == true){
+    <div class="nav__display">
         <div class="nav__mobile-container">
             <div class="nav__logo-cross">
                 <img src="assets/images/logo.png" alt="logo" class="nav__logo logo">
@@ -22,8 +23,8 @@
                 </div>
             </div>
         </div>
-</div>
-
+    </div>
+}
 <div class="nav">
     <div class="nav__flex">
         <img src="assets/images/logo.png" alt="logo" class="nav__logo">
