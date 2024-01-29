@@ -13,19 +13,21 @@ export class CharactersTemplateComponent {
   ngOnInit() {
     
   }
-
+  
   allChara = [
     {name: "Albedo", vision: "Geo", icon: "Albedo"}, {name: "Alhaitham", vision: "Dendro", icon: "Alhatham"}, 
     {name: "Ayaka", vision: "Cryo", icon: "Ayaka"}, {name: "Ayato", vision: "Hydro", icon: "Ayato"}, {name: "Baizhu", vision: "Dendro", icon: "Baizhuer"}, 
-    {name: "Bennett", vision: "Pyro", icon: "Bennett"}, {name: "Charlotte", vision: "Cryo", icon: "Charlotte"}, 
+    {name: "Bennett", vision: "Pyro", icon: "Bennett"}, {name: "Charlotte", vision: "Cryo", icon: "Charlotte"}, {name: "Chevreuse", vision: "Pyro", icon: "Chevreuse"}, 
     {name: "Cyno", vision: "Electro", icon: "Cyno"}, {name: "Eula", vision: "Cryo", icon: "Eula"},
     {name: "Faruzan", vision: "Anemo", icon: "Faruzan"}, {name: "Fischl", vision: "Electro", icon: "Fischl"}, {name: "Furina", vision: "Hydro", icon: "Furina"},
     {name: "Ganyu", vision: "Cryo", icon: "Ganyu"},
     {name: "Gorou", vision: "Geo", icon: "Gorou"}, {name: "Heizou", vision: "Anemo", icon: "Heizo"},
     {name: "Hu-tao", vision: "Pyro", icon: "Hutao"}, {name: "Itto", vision: "Geo", icon: "Itto"}, {name: "Kazuha", vision: "Anemo", icon: "Kazuha"},
-    {name: "Kokomi", vision: "Hydro", icon: "Kokomi"}, {name: "Shinobu", vision: "Electro", icon: "Shinobu"}, {name: "Lyney", vision: "Pyro", icon: "Liney"},
+    {name: "Kokomi", vision: "Hydro", icon: "Kokomi"}, {name: "Shinobu", vision: "Electro", icon: "Shinobu"},
+    {name: "Lyney", vision: "Pyro", icon: "Liney"},
     {name: "Mona", vision: "Hydro", icon: "Mona"},
-    {name: "Nahida", vision: "Dendro", icon: "Nahida"}, {name: "Neuvillette", vision: "Hydro", icon: "Neuvillette"}, {name: "Nilou", vision: "Hydro", icon: "Nilou"},
+    {name: "Nahida", vision: "Dendro", icon: "Nahida"}, {name: "Navia", vision: "Geo", icon: "Navia"},
+    {name: "Neuvillette", vision: "Hydro", icon: "Neuvillette"}, {name: "Nilou", vision: "Hydro", icon: "Nilou"},
     {name: "Raiden", vision: "Electro", icon: "Shougun"}, 
     {name: "Shenhe", vision: "Cryo", icon: "Shenhe"}, 
     {name: "Tartaglia", vision: "Hydro", icon: "Tartaglia"}, {name: "Tighnari", vision: "Dendro", icon: "Tighnari"}, {name: "Venti", vision: "Anemo", icon: "Venti"},

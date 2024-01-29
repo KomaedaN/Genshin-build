@@ -1,5 +1,6 @@
 import { Component, ElementRef, Renderer2 } from '@angular/core';
 import { Router } from '@angular/router';
+import { CharactersService } from '../service/characters.service';
 
 @Component({
   selector: 'app-home',
@@ -7,8 +8,14 @@ import { Router } from '@angular/router';
   styleUrls: ['./home.component.scss']
 })
 export class HomeComponent {
-  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef) {}
+  constructor(private router: Router, private renderer: Renderer2, private el: ElementRef, private charactersService: CharactersService) {}
 
+  
+
+  ngOnInit(): void {
+    
+  }
+  
   slides = [
     { src: "https://genshin.jmp.blue/elements/hydro/icon", title: 'hydro'},
     { src: "https://genshin.jmp.blue/elements/pyro/icon", title: 'pyro'},
@@ -19,33 +26,18 @@ export class HomeComponent {
     { src: "https://genshin.jmp.blue/elements/dendro/icon", title: 'dendro'},
   ]
 
-  ngOnInit(): void {
-    
-  }
-  
-
-
-  allCharacters = [
-    { hydro: [ 'neuvillette', 'tartaglia', 'yelan', 'kokomi', 'nilou', 'mona', 'xingqiu'], lengthCharacters: 7},
-    { pyro: ['hu-tao', 'lyney','xiangling', 'bennett', 'yoimiya'], lengthCharacters: 5},
-    { geo: ['arataki-itto', 'zhongli', 'albedo', 'gorou', 'yun-jin'], lengthCharacters: 5},
-    { anemo: ['kazuha', 'xiao', 'venti', 'shikanoin-heizou', 'faruzan'], lengthCharacters: 5},
-    { cryo: ['wriothesley', 'ayaka', 'eula', 'shenhe', 'ganyu'], lengthCharacters: 5},
-    { electro: ['yae-miko', 'cyno', 'raiden', 'fischl', 'kuki-shinobu'], lengthCharacters: 5},
-    { dendro: ['alhaitham', 'baizhu', 'nahida', 'tighnari','kaveh'], lengthCharacters: 5},
-  ];
-
+  allCharacters = this.charactersService.allCharacters
   class1 = '';
   class2 = 'pyro';
   class3 = '';
   
   currentIndex: number = 0;
   currentVision = 'pyro';
-  currentCharacter = 'hu-tao';
-  description = "The 77th Director of the Wangsheng Funeral Parlor. She took over the business at a rather young age.";
+  currentCharacter = 'gaming';
+  description = "How many years ago was it? I don't know... but I intend to find out. When I woke up, I was all alone... until I met you two months ago.";
   currentNation = 'Liyue';
   charactersIndex: number = 0;
-  currentCharacterImg = 'https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_Hutao.png';
+  currentCharacterImg = 'https://api.ambr.top/assets/UI/UI_Gacha_AvatarImg_Gaming.png';
   
 
   getCurrentSlideUrl(add: number) {
