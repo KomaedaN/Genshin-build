@@ -12,9 +12,7 @@ export class HomeComponent {
 
   
 
-  ngOnInit(): void {
-    
-  }
+  ngOnInit(): void { }
   
   slides = [
     { src: "https://genshin.jmp.blue/elements/hydro/icon", title: 'hydro'},
@@ -26,7 +24,7 @@ export class HomeComponent {
     { src: "https://genshin.jmp.blue/elements/dendro/icon", title: 'dendro'},
   ]
 
-  allCharacters = this.charactersService.allCharacters
+  allCharacters = this.charactersService.homeCharacters
   class1 = '';
   class2 = 'pyro';
   class3 = '';
@@ -117,43 +115,43 @@ export class HomeComponent {
     if( this.currentVision === "hydro") {
       const element = this.allCharacters[0]?.[this.currentVision];
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "pyro") {
       const element = this.allCharacters[1]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "geo") {
       const element = this.allCharacters[2]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "anemo") {
       const element = this.allCharacters[3]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "cryo") {
       const element = this.allCharacters[4]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "electro") {
       const element = this.allCharacters[5]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     else if( this.currentVision === "dendro") {
       const element = this.allCharacters[6]?.[this.currentVision]
       const character = element ? element[this.charactersIndex + add] : undefined;
-      const validName = this.verifyName(String(character));
+      const validName = this.charactersService.verifyName(String(character));
       return `https://api.ambr.top/assets/UI/UI_AvatarIcon_${validName}.png`;
     }
     return '';
@@ -216,7 +214,7 @@ export class HomeComponent {
     }
   }
   updateCharacterData(character: string) {
-    const valideName = this.verifyName(character);
+    const valideName = this.charactersService.verifyName(String(character));
     const imgId = document.getElementById('gacha_image') as HTMLElement;
     const characters = document.getElementById('characters') as HTMLElement;
     const name = document.getElementById('characterName') as HTMLElement;
@@ -331,39 +329,6 @@ export class HomeComponent {
         }
       }
     }); 
-  }
-
-  verifyName(character: string) {
-    if (character == 'arataki-itto') {
-      return 'Itto';
-    }
-    else if (character == 'shikanoin-heizou') {
-      return 'Heizo';
-    }
-    else if (character == 'raiden') {
-      return 'Shougun';
-    }
-    else if (character == 'yae-miko') {
-      return 'Yae';
-    }
-    else if (character == 'kuki-shinobu') {
-      return 'Shinobu';
-    }
-    else if (character == 'baizhu') {
-      return 'Baizhuer';
-    }
-    else if (character == 'alhaitham') {
-      return 'Alhatham';
-    }
-    else if (character == 'lyney') {
-      return 'Liney';
-    }
-    else {
-      const upperName = character.charAt(0).toUpperCase() + character.slice(1);
-      const validName = upperName.replace("-", "");
-      return validName;
-    }
-
   }
 }
 

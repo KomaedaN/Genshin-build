@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { CharactersService } from 'src/app/service/characters.service';
 
 @Component({
   selector: 'app-characters-template',
@@ -8,35 +9,13 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class CharactersTemplateComponent {
   public name: string = '';
-  constructor(private route: ActivatedRoute) { }
+  constructor(private route: ActivatedRoute, private charactersService: CharactersService) { }
   
   ngOnInit() {
     
   }
   
-  allChara = [
-    {name: "Albedo", vision: "Geo", icon: "Albedo"}, {name: "Alhaitham", vision: "Dendro", icon: "Alhatham"}, 
-    {name: "Ayaka", vision: "Cryo", icon: "Ayaka"}, {name: "Ayato", vision: "Hydro", icon: "Ayato"}, {name: "Baizhu", vision: "Dendro", icon: "Baizhuer"}, 
-    {name: "Bennett", vision: "Pyro", icon: "Bennett"}, {name: "Charlotte", vision: "Cryo", icon: "Charlotte"}, {name: "Chevreuse", vision: "Pyro", icon: "Chevreuse"}, 
-    {name: "Cyno", vision: "Electro", icon: "Cyno"}, {name: "Eula", vision: "Cryo", icon: "Eula"},
-    {name: "Faruzan", vision: "Anemo", icon: "Faruzan"}, {name: "Fischl", vision: "Electro", icon: "Fischl"}, {name: "Furina", vision: "Hydro", icon: "Furina"},
-    {name: "Ganyu", vision: "Cryo", icon: "Ganyu"},
-    {name: "Gorou", vision: "Geo", icon: "Gorou"}, {name: "Heizou", vision: "Anemo", icon: "Heizo"},
-    {name: "Hu-tao", vision: "Pyro", icon: "Hutao"}, {name: "Itto", vision: "Geo", icon: "Itto"}, {name: "Kazuha", vision: "Anemo", icon: "Kazuha"},
-    {name: "Kokomi", vision: "Hydro", icon: "Kokomi"}, {name: "Shinobu", vision: "Electro", icon: "Shinobu"},
-    {name: "Lyney", vision: "Pyro", icon: "Liney"},
-    {name: "Mona", vision: "Hydro", icon: "Mona"},
-    {name: "Nahida", vision: "Dendro", icon: "Nahida"}, {name: "Navia", vision: "Geo", icon: "Navia"},
-    {name: "Neuvillette", vision: "Hydro", icon: "Neuvillette"}, {name: "Nilou", vision: "Hydro", icon: "Nilou"},
-    {name: "Raiden", vision: "Electro", icon: "Shougun"}, 
-    {name: "Shenhe", vision: "Cryo", icon: "Shenhe"}, 
-    {name: "Tartaglia", vision: "Hydro", icon: "Tartaglia"}, {name: "Tighnari", vision: "Dendro", icon: "Tighnari"}, {name: "Venti", vision: "Anemo", icon: "Venti"},
-    {name: "Wanderer", vision: "Anemo", icon: "Wanderer"}, {name: "Wriothesley", vision: "Cryo", icon: "Wriothesley"}, {name: "Xiangling", vision: "Pyro", icon: "Xiangling"}, 
-    {name: "Xiao", vision: "Anemo", icon: "Xiao"}, {name: "Xingqiu", vision: "Hydro", icon: "Xingqiu"},
-    {name: "Yae-miko", vision: "Electro", icon: "Yae"}, {name: "Yelan", vision: "Hydro", icon: "Yelan"}, {name: "Yoimiya", vision: "Pyro", icon: "Yoimiya"},
-    {name: "Yun-jin", vision: "Geo", icon: "Yunjin"}, {name: "Zhongli", vision: "Geo", icon: "Zhongli"},
-  ]
-
+  allChara = this.charactersService.charcterTemplate
   displayAll = true;
   visions: { [key: string]: boolean } = {
     Hydro: false,
@@ -61,8 +40,6 @@ export class CharactersTemplateComponent {
       id?.classList.remove(visionType);
     };
   }
-
-  
 
   displayAllElements() {
     if (!this.visions["Hydro"] && !this.visions["Cryo"] && !this.visions["Pyro"] && !this.visions["Anemo"] && !this.visions["Electro"] && !this.visions["Dendro"] && !this.visions["Geo"]){
