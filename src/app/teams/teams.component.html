@@ -1,15 +1,24 @@
 <app-nav></app-nav>
 
 <section class="container">
-    <div *ngFor="let characters of teams; let num = index;" class="team">
-        <h1 class="team__name">{{characters.name}}</h1>
-        <div class="team__container {{characters.team[0]}}">
-            <div *ngFor="let character of characters.team; let i = index;" class="team__character_container">
-                <a routerLink="/characters/{{character}}">
-                    <img src="https://api.ambr.top/assets/UI/UI_AvatarIcon_{{character}}.png" alt="character_icon" class="team__character {{characters.star[i]}}">
-                </a>
-            </div>
-        </div>
+  <div *ngFor="let characters of teams; let num = index" class="team">
+    <h1 class="team__name">{{ characters.name }}</h1>
+    <div class="team__container {{ characters.team[0] }}">
+      <div
+        *ngFor="let character of characters.team; let i = index"
+        class="team__character_container"
+      >
+        <a routerLink="/characters/{{ character }}">
+          <img
+            src="https://gi.yatta.moe/assets/UI/UI_AvatarIcon_{{
+              character
+            }}.png"
+            alt="character_icon"
+            class="team__character {{ characters.star[i] }}"
+          />
+        </a>
+      </div>
     </div>
+  </div>
 </section>
 <div class="bottom"></div>
